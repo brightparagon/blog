@@ -35,7 +35,11 @@ const Example: FC<Props> = ({ markdownFile }) => {
         {data.thumbnail && (
           <img src={data.thumbnail} alt={thumbnailAlt} />
         )}
-        <p>{dayjs(data.createdAt).format('MMMM D YYYY')} <div>{readingTime}</div></p>
+        <div className="PostHead__Info">
+          <span>{dayjs(data.createdAt).format('MMMM D YYYY')}</span>
+          <span>{data.category}</span>
+          <div className="ReadingTime">{readingTime}</div>
+        </div>
       </PostHead>
       <Article>
         <Markdown
@@ -57,7 +61,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/learned-from-sk.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/fashion-tech-startup.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 
@@ -84,16 +88,20 @@ const PostHead = styled.section`
     height: 600px;
   }
 
-  p {
+  .PostHead__Info {
     display: flex;
     align-items: center;
+    margin: 20px 0;
     height: 30px;
     font-weight: 600;
 
-    div {
+    span {
+      margin-right: 20px;
+    }
+
+    .ReadingTime {
       display: flex;
       align-items: center;
-      margin-left: 20px;
       padding: 3px 6px;
       height: 100%;
       font-weight: 400;
@@ -136,9 +144,9 @@ const Article = styled.article`
       left: 0;
       top: 0;
       content: '';
-      width: 8px;
+      width: 4px;
       height: 100%;
-      background-color: #a7a7a7;
+      background-color: black;
     }
   }
 
@@ -155,6 +163,14 @@ const Article = styled.article`
   img {
     width: 100%;
     height: auto;
+  }
+
+  hr {
+    margin: 20px 0;
+    width: 100%;
+    height: 2px;
+    background-color: #a5a5a5;
+    border: none;
   }
 `
 

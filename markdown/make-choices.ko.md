@@ -3,14 +3,13 @@ key: 'make-choices'
 title: 'Jeff Bezos, founder of Amazon 그리고 삶'
 createdAt: '08-02-2016 22:21'
 ---
-
 # Jeff Bezos, founder of Amazon 그리고 삶
 
 이 글은 조성문님의 [아마존(Amazon) 성공의 비결은 소비자 경험 개선을 위한 끊임없는 노력](https://sungmooncho.com/2011/05/16/amazon-2/) 포스팅에 영향을 받아 작성 했으며 발췌한 내용으로 시작합니다.
 
 <iframe
   src="https://www.youtube.com/embed/vBmavNoChZc?version=3&amp;rel=1&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;fs=1&amp;hl=ko&amp;autohide=2&amp;wmode=transparent"
-  allowfullscreen="true"
+  allowfullscreen={true}
   sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
 ></iframe>
 

@@ -1,7 +1,7 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
 
-import { FC, ReactNode } from 'react'
-import Link from 'next/link'
+import type { FC, ReactNode } from 'react'
 
 interface Props {
   children: ReactNode
@@ -30,7 +30,7 @@ export default Layout
 const navigationHeight = 60
 
 const Navigation = styled.nav`
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   display: flex;
@@ -69,7 +69,8 @@ const Container = styled.div`
 
 const Main = styled.div`
   display: flex;
-  width: 768px;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-top: ${navigationHeight}px;
 `

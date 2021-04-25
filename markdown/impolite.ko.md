@@ -3,18 +3,13 @@ key: 'impolite'
 title: '무례란 무엇인가'
 createdAt: '07-02-2017 17:56'
 ---
-
 # 무례란 무엇인가
 
 최근에 페이스북을 보다가 예의없는 사람에 대해 쓴 글을 보게 되었는데 간결하고, 관점이 재밌고 무엇보다 무릎을 치게 되는 시원함이 있어 그 글을 공유하고 내 생각을 얹어 글을 조금 확장해보고자 한다. 근래에 정의란 무엇인가(Michael Sandel), 죽음이란 무엇인가(Shelly Kagan), 국가란 무엇인가(유시민) 등 '~란 무엇인가' 류의 책을 많이 읽어 제목을 따라해봤다(..).
 
 아래는 신상철님의 글이다.
 
-<iframe
-  src="https://www.facebook.com/shinestory/posts/1279056888889466"
-  allowfullscreen="true"
-  sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
-></iframe>
+> https://www.facebook.com/shinestory/posts/1279056888889466
 
 결론은 딱 11자다. 예의 없는 사람은 멍청하다.
 

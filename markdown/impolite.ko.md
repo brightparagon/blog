@@ -2,6 +2,7 @@
 key: 'impolite'
 title: '무례란 무엇인가'
 createdAt: '07-02-2017 17:56'
+place: 'Cafe Knock, 경기도 용인시 기흥구 동백동 평촌2로1번길 35-1'
 ---
 # 무례란 무엇인가
 

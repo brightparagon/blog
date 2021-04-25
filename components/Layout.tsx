@@ -30,10 +30,9 @@ export default Layout
 const navigationHeight = 60
 
 const Navigation = styled.nav`
-  position: sticky;
-  top: 0;
-  left: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: ${navigationHeight}px;
 
@@ -41,18 +40,18 @@ const Navigation = styled.nav`
     margin: 0;
     padding: 0;
     list-style: none;
+    width: 1024px;
+    height: 100%;
 
     li {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      width: 100px;
+      width: 50px;
       height: 100%;
       cursor: pointer;
-
-      &:hover {
-        background-color: ivory;
-      }
+      font-size: 20px;
+      font-weight: 600;
 
       a {
         text-decoration: none;
@@ -65,14 +64,14 @@ const Navigation = styled.nav`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: #fafbfc;
 `
 
-const Main = styled.div`
+const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: ${navigationHeight}px;
 `
 
 const Footer = styled.div`

@@ -2,6 +2,7 @@
 key: 'live-autonomously'
 title: '나는 주체적으로 살고 있는 걸까?'
 createdAt: '05-11-2017 10:29'
+place: 'Cafe Knock, 경기도 용인시 기흥구 동백동 평촌2로1번길 35-1'
 ---
 # 나는 주체적으로 살고 있는 걸까?
 

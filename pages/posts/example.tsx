@@ -8,6 +8,8 @@ import matter from 'gray-matter'
 import dayjs from 'dayjs'
 import styled from '@emotion/styled'
 
+import { getReadingTime } from '../../utils/misc'
+
 import Layout from '../../components/Layout'
 import GoogleMap from '../../components/GoogleMap'
 
@@ -25,6 +27,7 @@ type MarkdownFile = {
 const Example: FC<Props> = ({ markdownFile }) => {
   const { content, data } = markdownFile
   const thumbnailAlt = /\w+.jpg/.exec(data.thumbnail)?.[0].split('.')[0]
+  const readingTime = getReadingTime(content)
 
   return (
     <Layout>
@@ -32,7 +35,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
         {data.thumbnail && (
           <img src={data.thumbnail} alt={thumbnailAlt} />
         )}
-        <p>{dayjs(data.createdAt).format('MMMM D YYYY')}</p>
+        <p>{dayjs(data.createdAt).format('MMMM D YYYY')} <div>{readingTime}</div></p>
       </PostHead>
       <Article>
         <Markdown
@@ -80,9 +83,24 @@ const PostHead = styled.section`
     width: 100%;
     height: 600px;
   }
-  
+
   p {
+    display: flex;
+    align-items: center;
+    height: 30px;
     font-weight: 600;
+
+    div {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+      padding: 3px 6px;
+      height: 100%;
+      font-weight: 400;
+      background-color: #22eb2c;
+      color: white;
+      border-radius: 10px;
+    }
   }
 `
 

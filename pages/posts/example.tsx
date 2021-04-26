@@ -46,7 +46,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
           <img src={data.thumbnail} alt={thumbnailAlt} />
         )}
         <div className="PostHead__Info">
-          <span>{dayjs(data.createdAt).format('MMMM D YYYY')}</span>
+          <span>{dayjs(data.createdAt).format('MMMM D YYYY h:mma')}</span>
           {data.categories && <span>{data.categories.join(', ')}</span>}
           <div className="ReadingTime">{readingTime}</div>
         </div>
@@ -87,7 +87,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/2018-open-source.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/movetostartup.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 

@@ -21,7 +21,16 @@ interface Props {
 
 type MarkdownFile = {
   content: string
-  data: { [key in string]: string }
+  data: MarkdownData
+}
+type MarkdownData = {
+  key: string
+  title: string
+  createdAt: string
+  thumbnail: string
+  place: string
+  categories: string[]
+  tags: string[]
 }
 
 const Example: FC<Props> = ({ markdownFile }) => {
@@ -37,7 +46,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
         )}
         <div className="PostHead__Info">
           <span>{dayjs(data.createdAt).format('MMMM D YYYY')}</span>
-          <span>{data.category}</span>
+          <span>{data.categories.join(', ')}</span>
           <div className="ReadingTime">{readingTime}</div>
         </div>
       </PostHead>
@@ -61,7 +70,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/fashion-tech-startup.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/2017-retrospective.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 

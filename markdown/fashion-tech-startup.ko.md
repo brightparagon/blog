@@ -4,7 +4,7 @@ title: 'SK에서 나는 무엇을 배웠나'
 createdAt: '08-13-2017 14:41'
 thumbnail: '/images/facebook.jpg'
 place: '테라로사 포스코센터점, 서울특별시 강남구 대치4동 테헤란로 440 포스코센터 1층'
-category: 'startup'
+categories: ['startup']
 tags: ['airbnb', '문화', '공간']
 ---
 # 옷, 개인 그리고 패션테크 스타트업

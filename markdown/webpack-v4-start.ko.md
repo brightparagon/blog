@@ -33,7 +33,7 @@ tags: ['amd', 'commonjs', 'bundler', 'guide', 'webpack', 'javascript']
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CONQUER WEBPACK V3</title>
+    <title>CONQUER WEBPACK V4</title>
   </head>
   <body>
     <script src="bundle.js"></script>
@@ -46,7 +46,7 @@ tags: ['amd', 'commonjs', 'bundler', 'guide', 'webpack', 'javascript']
 function app() {
   // h1 tag를 만든다.
   const contents = document.createElement('h1');
-  contents.innerHTML = 'Hello Webpack v3!'
+  contents.innerHTML = 'Hello Webpack v4!'
 
   return contents;
 }

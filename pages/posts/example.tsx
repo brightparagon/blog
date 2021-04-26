@@ -5,39 +5,25 @@ import rehypeRaw from 'rehype-raw'
 import { promises as fs } from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import dayjs from 'dayjs'
 import styled from '@emotion/styled'
 
-import Layout from '../../components/Layout'
+import Layout, { maxContentWidth } from '../../components/Layout'
 import CodeBlock from '../../components/CodeBlock'
 import GoogleMap from '../../components/GoogleMap'
+import ReadingTime from '../../components/ReadingTime'
+import CreatedAt from '../../components/CreatedAt'
 
 import { getReadingTime } from '../../utils/misc'
-import { blackCoral, eerieBlack, salmon, cultured } from '../../utils/colors'
+import { blackCoral, eerieBlack } from '../../utils/colors'
 
 import type { GetStaticProps } from 'next'
 
 interface Props {
-  markdownFile: MarkdownFile
+  post: Post
 }
 
-type MarkdownFile = {
-  content: string
-  data: MarkdownData
-}
-type MarkdownData = {
-  key: string
-  title: string
-  createdAt: string
-  thumbnail: string
-  thumbnailPosition?: string
-  place: string
-  categories: string[]
-  tags: string[]
-}
-
-const Example: FC<Props> = ({ markdownFile }) => {
-  const { content, data } = markdownFile
+const Example: FC<Props> = ({ post }) => {
+  const { content, data } = post
   const thumbnailAlt = /\w+.jpg/.exec(data.thumbnail)?.[0].split('.')[0]
   const readingTime = getReadingTime(content)
 
@@ -48,9 +34,9 @@ const Example: FC<Props> = ({ markdownFile }) => {
           <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
         )}
         <div className="PostHead__Info">
-          <span>{dayjs(data.createdAt).format('MMMM D YYYY h:mma')}</span>
+          <CreatedAt createdAt={data.createdAt} />
           {data.categories && <span>{data.categories.join(', ')}</span>}
-          <div className="ReadingTime">{readingTime}</div>
+          <ReadingTime readingTime={readingTime} />
         </div>
       </PostHead>
       {/* <FloatingCard></FloatingCard> */}
@@ -91,13 +77,13 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/move-to-startup.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'posts/move-to-startup.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 
   return {
     props: {
-      markdownFile: {
+      post: {
         content: matteredFile.content,
         data: matteredFile.data,
       },
@@ -112,7 +98,7 @@ const PostHead = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1024px;
+  width: ${maxContentWidth}px;
   background-color: transparent;
   outline: none;
 
@@ -127,23 +113,12 @@ const PostHead = styled.section`
     align-items: center;
     margin-top: 50px;
     margin-bottom: 10px;
-    width: 680px;
+    width: ${contentsWidth}px;
     height: 30px;
     font-weight: 600;
 
     span {
       margin-right: 20px;
-    }
-
-    .ReadingTime {
-      display: flex;
-      align-items: center;
-      padding: 3px 6px;
-      height: 100%;
-      font-weight: 400;
-      background-color: ${salmon};
-      color: ${cultured};
-      border-radius: 10px;
     }
   }
 `

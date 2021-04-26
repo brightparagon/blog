@@ -23,9 +23,7 @@ const Layout: FC<Props> = ({ children }) => {
       <Main>
         {children}
       </Main>
-      <Footer>
-        this is footer~
-      </Footer>
+      <Footer></Footer>
     </Container>
   )
 }
@@ -33,6 +31,7 @@ const Layout: FC<Props> = ({ children }) => {
 export default Layout
 
 const navigationHeight = 60
+export const maxContentWidth = 1024
 
 const Navigation = styled.nav`
   display: flex;
@@ -43,7 +42,7 @@ const Navigation = styled.nav`
 
   .Navigation__container {
     display: flex;
-    width: 1024px;
+    width: ${maxContentWidth}px;
     height: 100%;
   }
 

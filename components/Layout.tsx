@@ -23,7 +23,9 @@ const Layout: FC<Props> = ({ children }) => {
       <Main>
         {children}
       </Main>
-      <Footer></Footer>
+      <Footer>
+        푸터를 뭘로 하지~ 🥱
+      </Footer>
     </Container>
   )
 }

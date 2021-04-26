@@ -107,14 +107,14 @@ const Post: FC<Props> = ({ post }) => {
           {data.categories && (
             <ul className="Categories">
               {data.categories.slice(0, 5).map((category) => (
-                <Tag content={category} />
+                <Tag key={category} content={category} />
               ))}
             </ul>
           )}
           {data.tags && (
             <ul className="Tags">
               {data.tags.slice(0, 5).map((tag) => (
-                <Tag content={tag} />
+                <Tag key={tag} content={tag} />
               ))}
             </ul>
           )}

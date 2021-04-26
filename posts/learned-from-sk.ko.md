@@ -4,6 +4,7 @@ title: 'SK에서 나는 무엇을 배웠나'
 createdAt: '07-09-2017 22:49'
 thumbnail: '/images/opera.jpg'
 place: 'Opera Bar - Sydney Opera House, Macquarie St, Sydney NSW 2000 Australia'
+isRowLong: true
 ---
 # SK에서 나는 무엇을 배웠나
 

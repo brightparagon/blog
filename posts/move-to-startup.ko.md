@@ -6,6 +6,7 @@ thumbnail: '/images/gopro.jpg'
 categories: ['life', 'growth', 'startup']
 tags: ['career', 'books', 'conglomerate', 'frontend', 'startup', 'resume', 'english']
 place: '스타벅스 올림픽공원남문점, 서울특별시 송파구 방이1동 위례성대로 102 1층'
+isRowLong: true
 ---
 # 지난 3년의 기록: 대기업에서 스타트업으로
 

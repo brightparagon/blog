@@ -12,4 +12,5 @@ type PostData = {
   place: string
   categories: string[]
   tags: string[]
+  isRowLong?: boolean
 }

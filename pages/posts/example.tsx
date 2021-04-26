@@ -87,7 +87,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/walk-on-my-own-path.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/2018-open-source.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 

@@ -1,0 +1,5 @@
+export const salmon = '#F3816F'
+export const blackCoral = '#5D647A'
+export const timberWolf = '#D7D8D3'
+export const eerieBlack = '#151618'
+export const cultured = '#f5f5f5'

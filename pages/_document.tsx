@@ -1,15 +1,19 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { css, Global } from '@emotion/react'
 
+import { eerieBlack } from '../utils/colors'
+
 const ResetStyles = css`
   * {
     box-sizing: border-box;
     font-family: 'Apple SD Gothic Neo', 'Noto Sans', sans-serif;
+    color: ${eerieBlack};
   }
 
   body {
     margin: 0;
     padding: 0;
+    text-rendering: optimizelegibility;
   }
 `
 

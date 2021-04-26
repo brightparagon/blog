@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
+import { cultured } from '../utils/colors'
+
 import type { FC, ReactNode } from 'react'
 
 interface Props {
@@ -76,7 +78,7 @@ const Navigation = styled.nav`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #fafbfc;
+  background-color: ${cultured};
 `
 
 const Main = styled.main`
@@ -93,5 +95,4 @@ const Footer = styled.div`
   align-items: center;
   width: 100%;
   height: 300px;
-  background-color: #f5f5f5;
 `

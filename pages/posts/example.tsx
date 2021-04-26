@@ -8,11 +8,12 @@ import matter from 'gray-matter'
 import dayjs from 'dayjs'
 import styled from '@emotion/styled'
 
-import { getReadingTime } from '../../utils/misc'
-
 import Layout from '../../components/Layout'
 import CodeBlock from '../../components/CodeBlock'
 import GoogleMap from '../../components/GoogleMap'
+
+import { getReadingTime } from '../../utils/misc'
+import { blackCoral, eerieBlack, salmon, cultured } from '../../utils/colors'
 
 import type { GetStaticProps } from 'next'
 
@@ -29,6 +30,7 @@ type MarkdownData = {
   title: string
   createdAt: string
   thumbnail: string
+  thumbnailPosition?: string
   place: string
   categories: string[]
   tags: string[]
@@ -43,7 +45,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
     <Layout>
       <PostHead>
         {data.thumbnail && (
-          <img src={data.thumbnail} alt={thumbnailAlt} />
+          <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
         )}
         <div className="PostHead__Info">
           <span>{dayjs(data.createdAt).format('MMMM D YYYY h:mma')}</span>
@@ -88,7 +90,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/thoughts-on-role-of-community.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/move-to-startup.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 
@@ -136,8 +138,8 @@ const PostHead = styled.section`
 
   img {
     object-fit: cover;
-    width: auto;
-    max-height: 600px;
+    width: 100%;
+    height: 500px;
   }
 
   .PostHead__Info {
@@ -159,8 +161,8 @@ const PostHead = styled.section`
       padding: 3px 6px;
       height: 100%;
       font-weight: 400;
-      background-color: #22eb2c;
-      color: white;
+      background-color: ${salmon};
+      color: ${cultured};
       border-radius: 10px;
     }
   }
@@ -175,7 +177,6 @@ const Article = styled.article`
   letter-spacing: 0;
   margin-bottom: 40px;
   word-wrap: break-word;
-  text-rendering: optimizelegibility;
 
   h1 {
     display: inline-block;
@@ -201,12 +202,12 @@ const Article = styled.article`
       content: '';
       width: 4px;
       height: 100%;
-      background-color: black;
+      background-color: ${eerieBlack};
     }
   }
 
   a {
-    color: black;
+    color: ${blackCoral};
   }
 
   iframe {
@@ -224,7 +225,7 @@ const Article = styled.article`
     margin: 20px 0;
     width: 100%;
     height: 2px;
-    background-color: #a5a5a5;
+    background-color: ${blackCoral};
     border: none;
   }
 `

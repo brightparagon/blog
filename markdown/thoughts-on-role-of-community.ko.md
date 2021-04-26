@@ -3,6 +3,7 @@ key: 'thoughts-on-role-of-community'
 title: '커뮤니티의 역할에 대한 단상'
 createdAt: '03-31-2019 15:04'
 thumbnail: '/images/sky.jpg'
+thumbnailPosition: '0 35%'
 categories: ['life', 'growth', 'education']
 tags: ['development', 'guide', 'junior', 'community', 'backend']
 place: '스타벅스 올림픽공원남문점, 서울특별시 송파구 방이1동 위례성대로 102 1층'

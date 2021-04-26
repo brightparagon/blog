@@ -73,6 +73,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
         </Markdown>
       </Article>
       <PostTail>
+        {data.tags && <span>{data.tags.join(', ')}</span>}
         {data.place && (
           <>
             <p>Written at {data.place}</p>
@@ -87,7 +88,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/movetostartup.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/thoughts-on-role-of-community.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 

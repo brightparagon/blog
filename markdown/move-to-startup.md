@@ -1,5 +1,5 @@
 ---
-key: 'movetostartup'
+key: 'move-to-startup'
 title: '지난 3년의 기록: 대기업에서 스타트업으로'
 createdAt: '09-27-2018 18:34'
 thumbnail: '/images/gopro.jpg'

@@ -11,6 +11,7 @@ import styled from '@emotion/styled'
 import { getReadingTime } from '../../utils/misc'
 
 import Layout from '../../components/Layout'
+import CodeBlock from '../../components/CodeBlock'
 import GoogleMap from '../../components/GoogleMap'
 
 import type { GetStaticProps } from 'next'
@@ -52,6 +53,18 @@ const Example: FC<Props> = ({ markdownFile }) => {
       </PostHead>
       <Article>
         <Markdown
+          components={{
+            code: ({className, inline, children, ...props}) => {
+              const classNameWithLanguage = className as string
+              const match = /language-(\w+)/.exec(classNameWithLanguage ?? '')
+          
+              if (!inline && match) {
+                return <CodeBlock language={match[1]} children={children.toString().replace(/\n$/, '')} {...props} />
+              }
+          
+              return <code className={classNameWithLanguage} {...props} />
+            }
+          }}
           remarkPlugins={[[gfm, { singleTilde: false }]]}
           rehypePlugins={[rehypeRaw]}
           linkTarget="_blank"
@@ -74,7 +87,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/learned-from-sk.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/webpack-v4-start.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 

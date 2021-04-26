@@ -1,5 +1,6 @@
-import { FC } from "react"
 import styled from '@emotion/styled'
+
+import type { FC } from 'react'
 
 interface Props {
   place: string

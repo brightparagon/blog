@@ -46,7 +46,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
         )}
         <div className="PostHead__Info">
           <span>{dayjs(data.createdAt).format('MMMM D YYYY')}</span>
-          <span>{data.categories.join(', ')}</span>
+          {data.categories && <span>{data.categories.join(', ')}</span>}
           <div className="ReadingTime">{readingTime}</div>
         </div>
       </PostHead>
@@ -60,8 +60,12 @@ const Example: FC<Props> = ({ markdownFile }) => {
         </Markdown>
       </Article>
       <PostTail>
-        <p>Written at {data.place}</p>
-        <GoogleMap place={data.place} />
+        {data.place && (
+          <>
+            <p>Written at {data.place}</p>
+            <GoogleMap place={data.place} />
+          </>
+        )}
       </PostTail>
     </Layout>
   )
@@ -70,7 +74,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
 export default Example
 
 export const getStaticProps: GetStaticProps = async () => {
-  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/2017-retrospective.ko.md')
+  const markdownExampleDirectory = path.join(process.cwd(), 'markdown/learned-from-sk.ko.md')
   const file = await fs.readFile(markdownExampleDirectory, 'utf8')
   const matteredFile = matter(file)
 
@@ -87,20 +91,47 @@ export const getStaticProps: GetStaticProps = async () => {
 const contentsWidth = 680
 
 const PostHead = styled.section`
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 1024px;
+  background-color: transparent;
+  outline: none;
+  /* z-index: 1; */
+
+  /* &:hover::before {
+    opacity: 1;
+    transform: scale(1.009);
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    opacity: 0.8;
+    box-shadow: 0 3px 30px rgb(0, 0, 0, 0.15);
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 2px;
+    z-index: -1;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+  } */
 
   img {
     object-fit: cover;
-    width: 100%;
-    height: 600px;
+    width: auto;
+    max-height: 600px;
   }
 
   .PostHead__Info {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    width: 680px;
     height: 30px;
     font-weight: 600;
 
@@ -137,6 +168,7 @@ const Article = styled.article`
     margin: 50px 0;
     font-size: 50px;
     line-height: 60px;
+    margin-top: 10px;
   }
 
   p {

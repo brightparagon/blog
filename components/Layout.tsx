@@ -11,9 +11,12 @@ const Layout: FC<Props> = ({ children }) => {
   return (
     <Container>
       <Navigation>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-        </ul>
+        <div className="Navigation__container">
+          <Link href="/"><h1>brightparagon</h1></Link>
+          {/* <ul>
+            <li><Link href="/">Home</Link></li>
+          </ul> */}
+        </div>
       </Navigation>
       <Main>
         {children}
@@ -36,11 +39,20 @@ const Navigation = styled.nav`
   width: 100%;
   height: ${navigationHeight}px;
 
+  .Navigation__container {
+    display: flex;
+    width: 1024px;
+    height: 100%;
+  }
+
+  h1 {
+    cursor: pointer;
+  }
+
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    width: 1024px;
     height: 100%;
 
     li {
@@ -71,6 +83,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
   width: 100%;
 `
 

@@ -53,6 +53,7 @@ const Example: FC<Props> = ({ markdownFile }) => {
           <div className="ReadingTime">{readingTime}</div>
         </div>
       </PostHead>
+      {/* <FloatingCard></FloatingCard> */}
       <Article>
         <Markdown
           components={{
@@ -114,27 +115,6 @@ const PostHead = styled.section`
   width: 1024px;
   background-color: transparent;
   outline: none;
-  /* z-index: 1; */
-
-  /* &:hover::before {
-    opacity: 1;
-    transform: scale(1.009);
-  }
-
-  &::before {
-    position: absolute;
-    content: '';
-    opacity: 0.8;
-    box-shadow: 0 3px 30px rgb(0, 0, 0, 0.15);
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 2px;
-    z-index: -1;
-    transition-property: opacity, transform;
-    transition-duration: 200ms;
-  } */
 
   img {
     object-fit: cover;
@@ -168,7 +148,39 @@ const PostHead = styled.section`
   }
 `
 
+// const FloatingCard = styled.section`
+//   position: fixed;
+//   left: 0px;
+//   top: 0px;
+//   display: flex;
+//   width: 300px;
+//   height: 500px;
+//   background-color: ${cultured};
+//   z-index: 1;
+
+//   &:hover::before {
+//     opacity: 1;
+//     transform: scale(1.009);
+//   }
+
+//   &::before {
+//     position: absolute;
+//     content: '';
+//     opacity: 0.7;
+//     box-shadow: 0 3px 30px rgb(0, 0, 0, 0.15);
+//     top: -8px;
+//     left: -8px;
+//     right: -8px;
+//     bottom: -8px;
+//     border-radius: 2px;
+//     z-index: -1;
+//     transition-property: opacity, transform;
+//     transition-duration: 200ms;
+//   }
+// `
+
 const Article = styled.article`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: ${contentsWidth}px;

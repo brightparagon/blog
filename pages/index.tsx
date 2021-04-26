@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const PostsGrid = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 40px 20px;
+  grid-gap: 20px 60px;
   grid-auto-rows: auto;
   width: ${maxContentWidth}px;
 `

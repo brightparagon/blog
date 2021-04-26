@@ -5,7 +5,6 @@ createdAt: '04-08-2018 15:10'
 thumbnail: '/images/webpack2.png'
 categories: ['development', 'webpack']
 tags: ['css', 'asset', 'bundler', 'guide', 'webpack', 'javascript']
-place: '스타벅스 송파위례점, 서울특별시 송파구 장지동 위례광장로 230'
 ---
 # [webpack v4] Asset Management
 
@@ -176,7 +175,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   module: {
@@ -200,8 +199,8 @@ module.exports = {
           'file-loader',
         ],
       },
-    ]
-  }
+    ],
+  },
 };
 ```
 webpack.config.js
@@ -274,7 +273,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   module: {

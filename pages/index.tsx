@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import { promises as fs } from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import dayjs from 'dayjs'
 
 import Layout, { maxContentWidth } from '../components/Layout'
 import Post from '../components/Post'
@@ -13,15 +14,22 @@ interface Props {
   posts: Post[]
 }
 
-// TODO: createdAt 순으로 내림차순 정렬
-
 const Home: FC<Props> = ({ posts }) => {
   return (
     <Layout>
       <PostsGrid>
-        {posts.map((post) => (
-          <Post key={post.data.key} post={post} />
-        ))}
+        {posts
+          .sort((a, b) => {
+            if (dayjs(a.data.createdAt).isAfter(b.data.createdAt)) {
+              return -1
+            }
+
+            return 1
+          })
+          .map((post) => (
+            <Post key={post.data.key} post={post} />
+          ))
+        }
       </PostsGrid>
     </Layout>
   )

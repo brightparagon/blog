@@ -12,6 +12,7 @@ import CodeBlock from '../../components/CodeBlock'
 import GoogleMap from '../../components/GoogleMap'
 import ReadingTime from '../../components/ReadingTime'
 import CreatedAt from '../../components/CreatedAt'
+import Tag from '../../components/Tag'
 
 import { getReadingTime } from '../../utils/misc'
 import { blackCoral, eerieBlack } from '../../utils/colors'
@@ -62,7 +63,20 @@ const PostPage: FC<Props> = ({ post }) => {
         </Markdown>
       </Article>
       <PostTail>
-        {data.tags && <span>{data.tags.join(', ')}</span>}
+        {data.categories && (
+          <ul className="Categories">
+            {data.categories.slice(0, 5).map((category) => (
+              <Tag key={category} content={category} />
+            ))}
+          </ul>
+        )}
+        {data.tags && (
+          <ul className="Tags">
+            {data.tags.slice(0, 5).map((tag) => (
+              <Tag key={tag} content={tag} />
+            ))}
+          </ul>
+        )}
         {data.place && (
           <>
             <p>Written at {data.place}</p>
@@ -251,4 +265,14 @@ const PostTail = styled.section`
   margin-bottom: 80px;
   font-size: 20px;
   font-weight: 400;
+
+  .Categories, .Tags {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-top: 8px;
+    list-style: none;
+  }
 `

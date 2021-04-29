@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { css, Global } from '@emotion/react'
 
-import { salmon, cultured } from '../utils/colors'
+import * as colors from '../utils/colors'
 
 const ResetStyles = css`
   * {
@@ -9,8 +9,8 @@ const ResetStyles = css`
     font-family: 'Apple SD Gothic Neo', 'Noto Sans', sans-serif;
 
     ::selection {
-      background-color: ${salmon};
-      color: ${cultured};
+      background-color: ${colors.salmon};
+      color: ${colors.cultured};
     }
   }
 

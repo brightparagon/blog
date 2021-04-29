@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
-import { cultured } from '../utils/colors'
+import * as colors from '../utils/colors'
 
 import type { FC, ReactNode } from 'react'
 
@@ -79,7 +79,8 @@ const Navigation = styled.nav`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${cultured};
+  background-color: ${colors.cultured};
+  color: ${colors.eerieBlack};
 `
 
 const Main = styled.main`

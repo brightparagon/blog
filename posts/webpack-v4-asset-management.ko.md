@@ -28,7 +28,6 @@ tags: ['css', 'asset', 'bundler', 'guide', 'webpack', 'javascript']
     <script src="bundle.js"></script>
   </body>
 </html>
-
 ```
 index.html
 

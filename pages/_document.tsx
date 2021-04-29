@@ -1,16 +1,16 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { css, Global } from '@emotion/react'
 
-import { eerieBlack, salmon } from '../utils/colors'
+import { salmon, cultured } from '../utils/colors'
 
 const ResetStyles = css`
   * {
     box-sizing: border-box;
     font-family: 'Apple SD Gothic Neo', 'Noto Sans', sans-serif;
-    color: ${eerieBlack};
 
     ::selection {
       background-color: ${salmon};
+      color: ${cultured};
     }
   }
 

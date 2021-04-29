@@ -54,7 +54,7 @@ const Post: FC<Props> = ({ post }) => {
             transition-property: opacity, transform;
             transition-duration: 200ms;
           }
-        
+
           .PostHead {
             display: flex;
             justify-content: space-between;
@@ -63,7 +63,7 @@ const Post: FC<Props> = ({ post }) => {
             width: 100%;
             height: 60px;
           }
-        
+
           .Thumbnail {
             object-fit: cover;
             width: 100%;

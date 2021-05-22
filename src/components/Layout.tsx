@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
-import * as colors from '../utils/colors'
+import * as colors from '../../utils/colors'
 
 import type { FC, ReactNode } from 'react'
 

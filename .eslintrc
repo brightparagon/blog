@@ -22,7 +22,6 @@
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-namespace": "off",
     "semi": ["warn", "never"],
-    "quotes": ["warn", "never"],
     "sort-imports": "off"
   },
   "globals": { "React": "writable" }

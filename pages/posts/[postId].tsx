@@ -7,15 +7,15 @@ import path from 'path'
 import matter from 'gray-matter'
 import styled from '@emotion/styled'
 
-import Layout, { maxContentWidth } from '../../components/Layout'
-import CodeBlock from '../../components/CodeBlock'
-import GoogleMap from '../../components/GoogleMap'
-import ReadingTime from '../../components/ReadingTime'
-import CreatedAt from '../../components/CreatedAt'
-import Tag from '../../components/Tag'
+import Layout, { maxContentWidth } from '../../src/components/Layout'
+import GoogleMap from '../../src/components/GoogleMap'
+import ReadingTime from '../../src/components/ReadingTime'
+import CreatedAt from '../../src/components/CreatedAt'
+import Tag from '../../src/components/Tag'
 
-import { getReadingTime } from '../../utils/misc'
+import { getReadingTime, getAltFromThumbnailUrl } from '../../utils/misc'
 import { blackCoral, eerieBlack } from '../../utils/colors'
+import { markdownOptions } from '../../utils/markdown'
 
 import type { GetStaticProps, GetStaticPaths } from 'next'
 
@@ -25,15 +25,15 @@ interface Props {
 
 const PostPage: FC<Props> = ({ post }) => {
   const { content, data } = post
-  const thumbnailAlt = /\w+.jpg/.exec(data.thumbnail)?.[0].split('.')[0]
+  const thumbnailAlt = getAltFromThumbnailUrl(data.thumbnail)
   const readingTime = getReadingTime(content)
 
   return (
     <Layout>
       <PostHead>
-        {data.thumbnail && (
+        {data.thumbnail ? (
           <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
-        )}
+        ) : null}
         <div className="PostHead__Info">
           <CreatedAt createdAt={data.createdAt} />
           {data.categories && <span>{data.categories.join(', ')}</span>}
@@ -43,18 +43,7 @@ const PostPage: FC<Props> = ({ post }) => {
       {/* <FloatingCard></FloatingCard> */}
       <Article>
         <Markdown
-          components={{
-            code: ({className, inline, children, ...props}) => {
-              const classNameWithLanguage = className as string
-              const match = /language-(\w+)/.exec(classNameWithLanguage ?? '')
-          
-              if (!inline && match) {
-                return <CodeBlock language={match[1]} children={children.toString().replace(/\n$/, '')} {...props} />
-              }
-          
-              return <code className={classNameWithLanguage} {...props} />
-            }
-          }}
+          components={markdownOptions.components}
           remarkPlugins={[[gfm, { singleTilde: false }]]}
           rehypePlugins={[rehypeRaw]}
           linkTarget="_blank"
@@ -63,26 +52,26 @@ const PostPage: FC<Props> = ({ post }) => {
         </Markdown>
       </Article>
       <PostTail>
-        {data.categories && (
+        {data.categories ? (
           <ul className="Categories">
             {data.categories.slice(0, 5).map((category) => (
               <Tag key={category} content={category} />
             ))}
           </ul>
-        )}
-        {data.tags && (
+        ) : null}
+        {data.tags ? (
           <ul className="Tags">
             {data.tags.slice(0, 5).map((tag) => (
               <Tag key={tag} content={tag} />
             ))}
           </ul>
-        )}
-        {data.place && (
+        ) : null}
+        {data.place ? (
           <>
             <p>Written at {data.place}</p>
             <GoogleMap place={data.place} />
           </>
-        )}
+        ) : null}
       </PostTail>
     </Layout>
   )
@@ -91,7 +80,7 @@ const PostPage: FC<Props> = ({ post }) => {
 export default PostPage
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  if (!context.params) {
+  if (context.params === undefined) {
     return {
       notFound: true,
     }
@@ -211,7 +200,6 @@ const Article = styled.article`
     margin: 50px 0;
     font-size: 50px;
     line-height: 60px;
-    margin-top: 10px;
   }
 
   p {
@@ -236,6 +224,7 @@ const Article = styled.article`
 
   a {
     color: ${blackCoral};
+    text-decoration: none;
   }
 
   iframe {
@@ -266,7 +255,8 @@ const PostTail = styled.section`
   font-size: 20px;
   font-weight: 400;
 
-  .Categories, .Tags {
+  .Categories,
+  .Tags {
     display: flex;
     justify-content: flex-start;
     align-items: center;

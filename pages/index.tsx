@@ -4,8 +4,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
 
-import Layout, { maxContentWidth } from '../components/Layout'
-import Post from '../components/Post'
+import Layout, { maxContentWidth } from '../src/components/Layout'
+import PostCard from '../src/components/PostCard'
 
 import type { GetStaticProps } from 'next'
 import { FC } from 'react'
@@ -27,7 +27,7 @@ const Home: FC<Props> = ({ posts }) => {
             return 1
           })
           .map((post) => (
-            <Post key={post.data.key} post={post} />
+            <PostCard key={post.data.key} post={post} />
           ))
         }
       </PostsGrid>
@@ -40,7 +40,6 @@ export default Home
 export const getStaticProps: GetStaticProps = async () => {
   const postsDirectory = path.join(process.cwd(), 'posts')
   const fileNames = await fs.readdir(postsDirectory)
-
   const posts = fileNames.map(async (filename) => {
     const postPath = path.join(postsDirectory, filename)
     const post = await fs.readFile(postPath, 'utf8')

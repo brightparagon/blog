@@ -2,12 +2,12 @@
 import { css } from '@emotion/react'
 import Link from 'next/link'
 
-import ReadingTime from '../components/ReadingTime'
-import CreatedAt from '../components/CreatedAt'
-import Tag from '../components/Tag'
+import ReadingTime from './ReadingTime'
+import CreatedAt from './CreatedAt'
+import Tag from './Tag'
 
-import { getReadingTime } from '../utils/misc'
-import { blackCoralRGB } from '../utils/colors'
+import { getReadingTime, getAltFromThumbnailUrl } from '../../utils/misc'
+import { blackCoralRGB } from '../../utils/colors'
 
 import type { FC } from 'react'
 
@@ -15,9 +15,9 @@ interface Props {
   post: Post
 }
 
-const Post: FC<Props> = ({ post }) => {
+const PostCard: FC<Props> = ({ post }) => {
   const { content, data } = post
-  const thumbnailAlt = /\w+.jpg/.exec(data.thumbnail)?.[0].split('.')[0]
+  const thumbnailAlt = getAltFromThumbnailUrl(data.thumbnail)
   const readingTime = getReadingTime(content)
 
   return (
@@ -79,7 +79,8 @@ const Post: FC<Props> = ({ post }) => {
               margin: 8px 0;
             }
 
-            .Categories, .Tags {
+            .Categories,
+            .Tags {
               display: flex;
               justify-content: flex-start;
               align-items: center;
@@ -98,7 +99,7 @@ const Post: FC<Props> = ({ post }) => {
         <img
           className="Thumbnail"
           src={data.thumbnail}
-          alt={`post thumbnail ${thumbnailAlt}`}
+          alt={`post card thumbnail ${thumbnailAlt}`}
           style={{ objectPosition: data.thumbnailPosition }}
         />
         <div className="PostInformation">
@@ -124,4 +125,4 @@ const Post: FC<Props> = ({ post }) => {
   )
 }
 
-export default Post
+export default PostCard

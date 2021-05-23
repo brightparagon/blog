@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { css, Global } from '@emotion/react'
 
-import * as colors from '../src/utils/colors'
+import * as colors from 'utils/colors'
 
 const ResetStyles = css`
   * {

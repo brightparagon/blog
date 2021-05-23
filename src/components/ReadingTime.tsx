@@ -1,5 +1,4 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 import { salmon, cultured } from '../utils/colors'
 
@@ -11,17 +10,18 @@ interface Props {
 
 const ReadingTime: FC<Props> = ({ readingTime }) => {
   return (
-    <span css={readingTimeStyle}>{readingTime}</span>
+    <StyledSpan>{readingTime}</StyledSpan>
   )
 }
 
 export default ReadingTime
 
-const readingTimeStyle = css`
+const StyledSpan = styled.span`
   display: flex;
   align-items: center;
   padding: 3px 6px;
-  height: 100%;
+  min-width: 50px;
+  height: 26px;
   font-weight: 400;
   background-color: ${salmon};
   color: ${cultured};

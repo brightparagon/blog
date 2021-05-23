@@ -1,5 +1,4 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 import { cultured, blackCoral } from '../utils/colors'
 
@@ -8,26 +7,29 @@ import type { FC } from 'react'
 interface Props {
   className?: string
   content: string
+  color?: string
 }
 
-const Tag: FC<Props> = ({ className, content }) => {
+const Tag: FC<Props> = ({ className, content, color = blackCoral }) => {
   return (
-    <span className={className} css={tagStyle}>
+    <StyledSpan className={className} color={color}>
       {content}
-    </span>
+    </StyledSpan>
   )
 }
 
 export default Tag
 
-const tagStyle = css`
+type StyledSpanProps = Pick<Props, 'color'>
+
+const StyledSpan = styled.span<StyledSpanProps>`
   display: flex;
   align-items: center;
   padding: 3px 6px;
-  margin-right: 4px;
-  height: 100%;
+  margin: 2px 4px 2px 0;
+  height: 26px;
   font-weight: 400;
-  background-color: ${blackCoral};
+  background-color: ${({ color }) => color};
   color: ${cultured};
   border-radius: 10px;
 `

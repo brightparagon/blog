@@ -4,7 +4,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
 
-import Layout, { maxContentWidth } from '../components/Layout'
+import Layout, { maxContentWidth, mediumWidth } from '../components/Layout'
 import PostCard from '../components/PostCard'
 
 import type { GetStaticProps } from 'next'
@@ -56,10 +56,22 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+const gridHorizontalGap = 20
+
 const PostsGrid = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px 60px;
+  grid-template-columns: repeat(2, calc(50% - ${gridHorizontalGap}px));
+  grid-gap: ${gridHorizontalGap}px ${gridHorizontalGap * 2}px;
   grid-auto-rows: auto;
-  width: ${maxContentWidth}px;
+  max-width: ${maxContentWidth}px;
+
+  @media (max-width: ${maxContentWidth}px) {
+    grid-template-columns: repeat(2, calc(50% - ${gridHorizontalGap * 0.8}px));
+    grid-gap: ${gridHorizontalGap * 0.8}px ${(gridHorizontalGap * 0.8) * 2}px;
+  }
+
+  @media (max-width: ${mediumWidth}px) {
+    grid-template-columns: repeat(2, calc(50% - ${gridHorizontalGap * 0.5}px));
+    grid-gap: ${gridHorizontalGap * 0.5}px ${(gridHorizontalGap * 0.5) * 2}px;
+  }
 `

@@ -1,4 +1,9 @@
+/** @jsxImportSource @emotion/react */
+
 import styled from '@emotion/styled'
+import { css } from '@emotion/react'
+
+import { mediumWidth } from 'components/Layout'
 
 import type { FC } from 'react'
 
@@ -13,8 +18,14 @@ const GoogleMap: FC<Props> = ({ place }) => {
     <MapOuter>
       <Canvas>
         <iframe
-          width="680"
-          height="400"
+          css={css`
+            width: 680px;
+            height: 400px;
+
+            @media (max-width: ${mediumWidth}px) {
+              height: 300px;
+            }
+          `}
           src={`${googleMapURL}&q=${encodeURI(place)}`}
           frameBorder={0}
           scrolling="no"
@@ -31,13 +42,15 @@ export default GoogleMap
 const MapOuter = styled.section`
   position: relative;
   text-align: right;
-  height: 400px;
-  width: 680px;
+  max-width: 680px;
+  max-height: 400px;
+  width: 100%;
+  height: 100%;
 `
 
 const Canvas = styled.div`
   overflow: hidden;
-  background: none !important;
-  height: 400px;
-  width: 680px;
+  background: none;
+  width: 100%;
+  height: 100%;
 `

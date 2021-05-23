@@ -33,7 +33,10 @@ const Layout: FC<Props> = ({ children }) => {
 export default Layout
 
 const navigationHeight = 60
+export const largeWidth = 1200
 export const maxContentWidth = 1024
+export const mediumWidth = 768
+export const smallWidth = 480
 
 const Navigation = styled.nav`
   display: flex;
@@ -46,41 +49,38 @@ const Navigation = styled.nav`
     display: flex;
     width: ${maxContentWidth}px;
     height: 100%;
-  }
 
-  h1 {
-    cursor: pointer;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    height: 100%;
-
-    li {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      width: 50px;
-      height: 100%;
+    h1 {
       cursor: pointer;
-      font-size: 20px;
-      font-weight: 600;
 
-      a {
-        text-decoration: none;
-        color: initial;
+      :hover {
+        color: ${colors.blackCoral};
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      height: 100%;
+
+      li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50px;
+        height: 100%;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 600;
+
+        a {
+          text-decoration: none;
+          color: initial;
+        }
       }
     }
   }
-`
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: ${colors.cultured};
-  color: ${colors.eerieBlack};
 `
 
 const Main = styled.main`
@@ -89,6 +89,14 @@ const Main = styled.main`
   align-items: center;
   margin-top: 10px;
   width: 100%;
+
+  @media (max-width: ${maxContentWidth}px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: ${mediumWidth}px) {
+    font-size: 12px;
+  }
 `
 
 const Footer = styled.div`
@@ -97,4 +105,13 @@ const Footer = styled.div`
   align-items: center;
   width: 100%;
   height: 300px;
+`
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${colors.cultured};
+  color: ${colors.eerieBlack};
+  padding: 0 10%;
 `

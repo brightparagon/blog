@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { FC } from 'react'
 import Markdown from 'react-markdown'
 import gfm from 'remark-gfm'
@@ -6,16 +8,17 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
-import Layout, { maxContentWidth } from '../../components/Layout'
-import GoogleMap from '../../components/GoogleMap'
-import ReadingTime from '../../components/ReadingTime'
-import CreatedAt from '../../components/CreatedAt'
-import Tag from '../../components/Tag'
+import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
+import GoogleMap from 'components/GoogleMap'
+import ReadingTime from 'components/ReadingTime'
+import CreatedAt from 'components/CreatedAt'
+import Tag from 'components/Tag'
 
-import { getReadingTime, getAltFromThumbnailUrl } from '../../utils/misc'
-import { blackCoral, eerieBlack } from '../../utils/colors'
-import { markdownOptions } from '../../utils/markdown'
+import { getReadingTime, getAltFromThumbnailUrl } from 'utils/misc'
+import { blackCoral, eerieBlack } from 'utils/colors'
+import { markdownOptions } from 'utils/markdown'
 
 import type { GetStaticProps, GetStaticPaths } from 'next'
 
@@ -36,7 +39,13 @@ export const PostPage: FC<Props> = ({ post }) => {
         ) : null}
         <div className="PostHead__Info">
           <CreatedAt createdAt={data.createdAt} />
-          {data.categories && <span>{data.categories.join(', ')}</span>}
+          {data.categories ? (
+            <Badges>
+              {data.categories.slice(0, 5).map((category) => (
+                <Tag key={category} content={category} color={eerieBlack} />
+              ))}
+            </Badges>
+          ) : null}
           <ReadingTime readingTime={readingTime} />
         </div>
       </PostHead>
@@ -53,22 +62,35 @@ export const PostPage: FC<Props> = ({ post }) => {
       </Article>
       <PostTail>
         {data.categories ? (
-          <ul className="Categories">
+          <Badges>
             {data.categories.slice(0, 5).map((category) => (
-              <Tag key={category} content={category} />
+              <Tag key={category} content={category} color={eerieBlack} />
             ))}
-          </ul>
+          </Badges>
         ) : null}
         {data.tags ? (
-          <ul className="Tags">
+          <Badges
+            css={css`
+              margin-top: 8px;
+            `}
+          >
             {data.tags.slice(0, 5).map((tag) => (
-              <Tag key={tag} content={tag} />
+              <Tag key={tag} content={tag} color={blackCoral} />
             ))}
-          </ul>
+          </Badges>
         ) : null}
         {data.place ? (
           <>
-            <p>Written at {data.place}</p>
+            <p>
+              <span
+                css={css`
+                  color: ${blackCoral};
+                `}
+              >
+                Written at
+              </span>{' '}
+              {data.place}
+            </p>
             <GoogleMap place={data.place} />
           </>
         ) : null}
@@ -126,7 +148,7 @@ const PostHead = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: ${maxContentWidth}px;
+  max-width: ${maxContentWidth}px;
   background-color: transparent;
   outline: none;
 
@@ -134,6 +156,14 @@ const PostHead = styled.section`
     object-fit: cover;
     width: 100%;
     height: 500px;
+
+    @media (max-width: ${mediumWidth}px) {
+      height: 300px;
+    }
+
+    @media (max-width: ${smallWidth}px) {
+      height: 180px;
+    }
   }
 
   .PostHead__Info {
@@ -141,7 +171,8 @@ const PostHead = styled.section`
     align-items: center;
     margin-top: 50px;
     margin-bottom: 10px;
-    width: ${contentsWidth}px;
+    max-width: ${contentsWidth}px;
+    width: 100%;
     height: 30px;
     font-weight: 600;
 
@@ -186,7 +217,8 @@ const Article = styled.article`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: ${contentsWidth}px;
+  max-width: ${contentsWidth}px;
+  width: 100%;
   font-size: 20px;
   line-height: 28px;
   letter-spacing: 0;
@@ -248,19 +280,17 @@ const Article = styled.article`
 const PostTail = styled.section`
   display: flex;
   flex-direction: column;
-  width: ${contentsWidth}px;
+  max-width: ${contentsWidth}px;
+  width: 100%;
   margin-bottom: 80px;
   font-size: 20px;
   font-weight: 400;
+`
 
-  .Categories,
-  .Tags {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    margin-top: 8px;
-    list-style: none;
-  }
+const Badges = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 `

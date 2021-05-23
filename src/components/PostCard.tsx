@@ -6,8 +6,8 @@ import ReadingTime from './ReadingTime'
 import CreatedAt from './CreatedAt'
 import Tag from './Tag'
 
-import { getReadingTime, getAltFromThumbnailUrl } from '../../utils/misc'
-import { blackCoralRGB } from '../../utils/colors'
+import { getReadingTime, getAltFromThumbnailUrl } from '../utils/misc'
+import { blackCoralRGB } from '../utils/colors'
 
 import type { FC } from 'react'
 

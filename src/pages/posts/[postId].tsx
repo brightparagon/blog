@@ -7,11 +7,11 @@ import path from 'path'
 import matter from 'gray-matter'
 import styled from '@emotion/styled'
 
-import Layout, { maxContentWidth } from '../../src/components/Layout'
-import GoogleMap from '../../src/components/GoogleMap'
-import ReadingTime from '../../src/components/ReadingTime'
-import CreatedAt from '../../src/components/CreatedAt'
-import Tag from '../../src/components/Tag'
+import Layout, { maxContentWidth } from '../../components/Layout'
+import GoogleMap from '../../components/GoogleMap'
+import ReadingTime from '../../components/ReadingTime'
+import CreatedAt from '../../components/CreatedAt'
+import Tag from '../../components/Tag'
 
 import { getReadingTime, getAltFromThumbnailUrl } from '../../utils/misc'
 import { blackCoral, eerieBlack } from '../../utils/colors'
@@ -23,7 +23,7 @@ interface Props {
   post: Post
 }
 
-const PostPage: FC<Props> = ({ post }) => {
+export const PostPage: FC<Props> = ({ post }) => {
   const { content, data } = post
   const thumbnailAlt = getAltFromThumbnailUrl(data.thumbnail)
   const readingTime = getReadingTime(content)
@@ -76,8 +76,6 @@ const PostPage: FC<Props> = ({ post }) => {
     </Layout>
   )
 }
-
-export default PostPage
 
 export const getStaticProps: GetStaticProps = async (context) => {
   if (context.params === undefined) {

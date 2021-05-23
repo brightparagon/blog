@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 
-import { salmon, cultured } from '../../utils/colors'
+import { salmon, cultured } from '../utils/colors'
 
 import type { FC } from 'react'
 

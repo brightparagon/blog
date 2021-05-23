@@ -4,8 +4,8 @@ import path from 'path'
 import matter from 'gray-matter'
 import dayjs from 'dayjs'
 
-import Layout, { maxContentWidth } from '../src/components/Layout'
-import PostCard from '../src/components/PostCard'
+import Layout, { maxContentWidth } from '../components/Layout'
+import PostCard from '../components/PostCard'
 
 import type { GetStaticProps } from 'next'
 import { FC } from 'react'
@@ -14,7 +14,7 @@ interface Props {
   posts: Post[]
 }
 
-const Home: FC<Props> = ({ posts }) => {
+export const Home: FC<Props> = ({ posts }) => {
   return (
     <Layout>
       <PostsGrid>
@@ -34,8 +34,6 @@ const Home: FC<Props> = ({ posts }) => {
     </Layout>
   )
 }
-
-export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
   const postsDirectory = path.join(process.cwd(), 'posts')

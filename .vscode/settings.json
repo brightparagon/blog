@@ -1,3 +1,4 @@
 {
-  "typescript.suggestionActions.enabled": false
+  "typescript.suggestionActions.enabled": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

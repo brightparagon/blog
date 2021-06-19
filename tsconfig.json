@@ -27,7 +27,7 @@
     },
     "sourceMap": true,
     "strict": true,
-    "allowJs": true,
+    "allowJs": false,
     "noEmit": true,
     "isolatedModules": true,
     "skipLibCheck": true,

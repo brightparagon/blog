@@ -27,13 +27,9 @@ class CustomDocument extends Document {
     return (
       <Html>
         <Head lang="ko">
-          <meta charSet="UTF-8"/>
+          <meta charSet="UTF-8" />
           {/* <link rel="shortcut icon" href="/favicon.ico" /> */}
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link
             rel="preload"
             as="style"
@@ -49,6 +45,19 @@ class CustomDocument extends Document {
               href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
             />
           </noscript>
+          {/* Global site tag (gtag.js) - Google Analytics */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Y7GG82NZG"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-2Y7GG82NZG');
+              `,
+            }}
+          />
           <Global styles={ResetStyles} />
         </Head>
         <body>

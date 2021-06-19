@@ -123,17 +123,19 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   const postsDirectory = path.join(process.cwd(), 'posts')
   const fileNames = await fs.readdir(postsDirectory, 'utf8')
-  const paths = fileNames.map(async (filename) => {
-    const postPath = path.join(postsDirectory, filename)
-    const post = await fs.readFile(postPath, 'utf8')
-    const matteredPost = matter(post)
+  const paths = fileNames
+    .filter((filename) => !filename.startsWith('pending'))
+    .map(async (filename) => {
+      const postPath = path.join(postsDirectory, filename)
+      const post = await fs.readFile(postPath, 'utf8')
+      const matteredPost = matter(post)
 
-    return {
-      params: {
-        postId: matteredPost.data.key,
-      },
-    }
-  })
+      return {
+        params: {
+          postId: matteredPost.data.key,
+        },
+      }
+    })
 
   return {
     paths: await Promise.all(paths),

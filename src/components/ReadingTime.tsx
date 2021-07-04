@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { salmon, cultured } from '../utils/colors'
+import { salmon, cultured } from 'constants/colors'
 
 import type { FC } from 'react'
 

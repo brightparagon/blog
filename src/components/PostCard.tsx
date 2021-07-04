@@ -6,8 +6,8 @@ import CreatedAt from './CreatedAt'
 import Tag from './Tag'
 import { maxContentWidth, mediumWidth, smallWidth } from './Layout'
 
-import { getReadingTime, getAltFromThumbnailUrl } from '../utils/misc'
-import { blackCoral, blackCoralRGB, eerieBlack } from '../utils/colors'
+import { getReadingTime, getAltFromThumbnailUrl } from 'utils/misc'
+import { blackCoral, blackCoralRGB, eerieBlack } from 'constants/colors'
 
 import type { FC } from 'react'
 

@@ -29,5 +29,10 @@
     "semi": ["warn", "never"],
     "sort-imports": "off"
   },
-  "globals": { "React": "writable" }
+  "globals": { "React": "writable" },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

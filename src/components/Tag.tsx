@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import { cultured, blackCoral } from '../utils/colors'
+import { cultured, blackCoral } from '../constants/colors'
 
 import type { FC } from 'react'
 

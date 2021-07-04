@@ -1,7 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { css, Global } from '@emotion/react'
 
-import * as colors from 'utils/colors'
+import * as colors from 'constants/colors'
+import { GA_MEASUREMENT_ID } from 'constants/env'
 
 const ResetStyles = css`
   * {
@@ -46,7 +47,7 @@ class CustomDocument extends Document {
             />
           </noscript>
           {/* Global site tag (gtag.js) - Google Analytics */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-2Y7GG82NZG"></script>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -54,7 +55,9 @@ class CustomDocument extends Document {
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', 'G-2Y7GG82NZG');
+                gtag('config', '${GA_MEASUREMENT_ID}', {
+                  send_page_view: false
+                });
               `,
             }}
           />

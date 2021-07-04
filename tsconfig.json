@@ -23,6 +23,9 @@
       ],
       "utils/*": [
         "src/utils/*"
+      ],
+      "constants/*": [
+        "src/constants/*"
       ]
     },
     "sourceMap": true,
@@ -40,5 +43,6 @@
     "declaration": true,
     "outDir": "dist",
     "strictPropertyInitialization": false,
+    "jsxImportSource": "@emotion/react"
   }
 }

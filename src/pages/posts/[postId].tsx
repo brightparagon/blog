@@ -1,6 +1,5 @@
-/** @jsxImportSource @emotion/react */
-
-import { FC } from 'react'
+import Head from 'next/head'
+import { FC, useEffect } from 'react'
 import Markdown from 'react-markdown'
 import gfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
@@ -17,7 +16,8 @@ import CreatedAt from 'components/CreatedAt'
 import Tag from 'components/Tag'
 
 import { getReadingTime, getAltFromThumbnailUrl } from 'utils/misc'
-import { blackCoral, eerieBlack } from 'utils/colors'
+import { blackCoral, eerieBlack } from 'constants/colors'
+import { GA_MEASUREMENT_ID } from 'constants/env'
 import { markdownOptions } from 'utils/markdown'
 
 import type { GetStaticProps, GetStaticPaths } from 'next'
@@ -31,8 +31,20 @@ export const PostPage: FC<Props> = ({ post }) => {
   const thumbnailAlt = getAltFromThumbnailUrl(data.thumbnail)
   const readingTime = getReadingTime(content)
 
+  useEffect(() => {
+    gtag('event', 'page_view', {
+      page_title: data.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      send_to: GA_MEASUREMENT_ID,
+    })
+  }, [])
+
   return (
     <Layout>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
       <PostHead>
         {data.thumbnail ? (
           <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />

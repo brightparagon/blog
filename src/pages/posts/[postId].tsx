@@ -16,7 +16,7 @@ import CreatedAt from 'components/CreatedAt'
 import Tag from 'components/Tag'
 
 import { getReadingTime, getAltFromThumbnailUrl } from 'utils/misc'
-import { blackCoral, eerieBlack } from 'constants/colors'
+import { blackCoral, eerieBlack, salmon } from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
 import { markdownOptions } from 'utils/markdown'
 
@@ -233,7 +233,7 @@ const Article = styled.article`
   flex-direction: column;
   max-width: ${contentsWidth}px;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 28px;
   letter-spacing: 0;
   margin-bottom: 40px;
@@ -242,8 +242,8 @@ const Article = styled.article`
   h1 {
     display: inline-block;
     margin: 50px 0;
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 46px;
+    line-height: 56px;
   }
 
   p {
@@ -252,7 +252,7 @@ const Article = styled.article`
 
   blockquote {
     position: relative;
-    padding: 10px 50px;
+    padding: 0 50px;
     margin: 20px 0;
 
     &::before {
@@ -267,7 +267,7 @@ const Article = styled.article`
   }
 
   a {
-    color: ${blackCoral};
+    color: ${salmon};
     text-decoration: none;
   }
 

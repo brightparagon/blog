@@ -15,6 +15,9 @@
     "type": "git",
     "url": "git+https://github.com/brightparagon/blog.git"
   },
+  "engines": {
+    "node": "20.x"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {

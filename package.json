@@ -16,7 +16,7 @@
     "url": "git+https://github.com/brightparagon/blog.git"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "author": "",
   "license": "ISC",
@@ -28,7 +28,7 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
     "dayjs": "^1.10.4",
-    "next": "^10.0.5",
+    "next": "^14.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.1"
   },

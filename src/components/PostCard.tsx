@@ -1,29 +1,26 @@
-import Link from 'next/link'
 import styled from '@emotion/styled'
+import Link from 'next/link'
 
-import ReadingTime from './ReadingTime'
 import CreatedAt from './CreatedAt'
-import Tag from './Tag'
 import { maxContentWidth, mediumWidth, smallWidth } from './Layout'
+import ReadingTime from './ReadingTime'
+import Tag from './Tag'
 
-import { getReadingTime, getAltFromThumbnailUrl } from 'utils/misc'
 import { blackCoral, blackCoralRGB, eerieBlack } from 'constants/colors'
-
-import type { FC } from 'react'
-
+import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
 interface Props {
   post: Post
 }
 
-const PostCard: FC<Props> = ({ post }) => {
+const PostCard = ({ post }: Props) => {
   const { content, data } = post
   const thumbnailAlt = getAltFromThumbnailUrl(data.thumbnail)
   const readingTime = getReadingTime(content)
 
   return (
-    <Link href={`/posts/${data.key}`}>
-      <StyledArticle data={data}>
+    <StyledArticle data={data}>
+      <Link href={`/posts/${data.key}`}>
         <PostHead>
           <ReadingTime readingTime={readingTime} />
         </PostHead>
@@ -52,8 +49,8 @@ const PostCard: FC<Props> = ({ post }) => {
             </Badges>
           ) : null}
         </PostInformation>
-      </StyledArticle>
-    </Link>
+      </Link>
+    </StyledArticle>
   )
 }
 
@@ -105,18 +102,18 @@ const PostHead = styled.div`
 const Thumbnail = styled.img<StyleProps>`
   object-fit: cover;
   width: 100%;
-  height: ${({ data: { isRowLong } }) => isRowLong ? '460px' : '280px'};
+  height: ${({ data: { isRowLong } }) => (isRowLong ? '460px' : '280px')};
 
   @media (max-width: ${maxContentWidth}px) {
-    height: ${({ data: { isRowLong } }) => isRowLong ? '350px' : '200px'};
+    height: ${({ data: { isRowLong } }) => (isRowLong ? '350px' : '200px')};
   }
 
   @media (max-width: ${mediumWidth}px) {
-    height: ${({ data: { isRowLong } }) => isRowLong ? '280px' : '180px'};
+    height: ${({ data: { isRowLong } }) => (isRowLong ? '280px' : '180px')};
   }
 
   @media (max-width: ${smallWidth}px) {
-    height: ${({ data: { isRowLong } }) => isRowLong ? '220px' : '140px'};
+    height: ${({ data: { isRowLong } }) => (isRowLong ? '220px' : '140px')};
   }
 `
 

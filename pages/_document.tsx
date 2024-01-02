@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { css, Global } from '@emotion/react'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 import * as colors from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
@@ -19,6 +19,11 @@ const ResetStyles = css`
     margin: 0;
     padding: 0;
     text-rendering: optimizelegibility;
+  }
+
+  a {
+    color: initial;
+    text-decoration: none;
   }
 `
 

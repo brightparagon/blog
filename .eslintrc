@@ -27,7 +27,8 @@
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-namespace": "off",
     "semi": ["warn", "never"],
-    "sort-imports": "off"
+    "sort-imports": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }]
   },
   "globals": { "React": "writable" },
   "settings": {

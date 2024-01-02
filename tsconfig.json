@@ -43,6 +43,7 @@
     "declaration": true,
     "outDir": "dist",
     "strictPropertyInitialization": false,
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "@emotion/react",
+    "incremental": true
   }
 }

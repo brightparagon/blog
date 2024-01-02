@@ -30,7 +30,7 @@ class CustomDocument extends Document {
         <Head lang="ko">
           <meta charSet="UTF-8" />
           <link rel="shortcut icon" href="/images/favicon.ico" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             rel="preload"
             as="style"

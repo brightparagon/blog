@@ -1,11 +1,7 @@
-/** @jsxImportSource @emotion/react */
-
-import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 import { mediumWidth } from 'components/Layout'
-
-import type { FC } from 'react'
 
 interface Props {
   place: string
@@ -13,7 +9,7 @@ interface Props {
 
 const googleMapURL = 'https://maps.google.com/maps?t=&z=13&ie=UTF8&iwloc=&output=embed'
 
-const GoogleMap: FC<Props> = ({ place }) => {
+const GoogleMap = ({ place }: Props) => {
   return (
     <MapOuter>
       <Canvas>

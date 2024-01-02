@@ -1,32 +1,32 @@
-import Head from 'next/head'
-import { FC, useEffect } from 'react'
-import Markdown from 'react-markdown'
-import gfm from 'remark-gfm'
-import rehypeRaw from 'rehype-raw'
-import { promises as fs } from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+import { promises as fs } from 'fs'
+import matter from 'gray-matter'
+import Head from 'next/head'
+import path from 'path'
+import { useEffect } from 'react'
+import Markdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
+import gfm from 'remark-gfm'
 
-import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
-import GoogleMap from 'components/GoogleMap'
-import ReadingTime from 'components/ReadingTime'
 import CreatedAt from 'components/CreatedAt'
+import GoogleMap from 'components/GoogleMap'
+import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
+import ReadingTime from 'components/ReadingTime'
 import Tag from 'components/Tag'
 
-import { getReadingTime, getAltFromThumbnailUrl } from 'utils/misc'
 import { blackCoral, eerieBlack, salmon } from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
 import { markdownOptions } from 'utils/markdown'
+import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
-import type { GetStaticProps, GetStaticPaths } from 'next'
+import type { GetStaticPaths, GetStaticProps } from 'next'
 
 interface Props {
   post: Post
 }
 
-export const PostPage: FC<Props> = ({ post }) => {
+export const PostPage = ({ post }: Props) => {
   const { content, data } = post
   const thumbnailAlt = getAltFromThumbnailUrl(data.thumbnail)
   const readingTime = getReadingTime(content)

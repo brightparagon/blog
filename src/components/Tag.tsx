@@ -1,8 +1,6 @@
 import styled from '@emotion/styled'
 
-import { cultured, blackCoral } from '../constants/colors'
-
-import type { FC } from 'react'
+import { blackCoral, cultured } from '../constants/colors'
 
 interface Props {
   className?: string
@@ -10,7 +8,7 @@ interface Props {
   color?: string
 }
 
-const Tag: FC<Props> = ({ className, content, color = blackCoral }) => {
+const Tag = ({ className, content, color = blackCoral }: Props) => {
   return (
     <StyledSpan className={className} color={color}>
       {content}

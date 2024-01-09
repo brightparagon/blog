@@ -1,6 +1,7 @@
 ---
 key: 'practice-of-emptying'
 title: '비우는 연습'
+description: ''
 createdAt: '05-24-2021 11:58'
 thumbnail: '/images/google-ad-manager.jpg'
 categories: ['guide']

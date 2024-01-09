@@ -1,6 +1,7 @@
 ---
 key: 'live-autonomously'
 title: '나는 주체적으로 살고 있는 걸까?'
+description: ''
 thumbnail: '/images/hmm.gif'
 createdAt: '05-11-2017 10:29'
 tags: ['2017']

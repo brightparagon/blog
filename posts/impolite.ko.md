@@ -1,6 +1,7 @@
 ---
 key: 'impolite'
 title: '무례란 무엇인가'
+description: ''
 createdAt: '07-02-2017 17:56'
 thumbnail: '/images/bow.gif'
 tags: ['2017']

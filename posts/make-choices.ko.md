@@ -1,6 +1,7 @@
 ---
 key: 'make-choices'
 title: 'Jeff Bezos, founder of Amazon 그리고 삶'
+description: ''
 thumbnail: '/images/bezos.gif'
 createdAt: '08-02-2016 22:21'
 tags: ['2016']

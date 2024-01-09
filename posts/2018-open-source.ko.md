@@ -1,6 +1,7 @@
 ---
 key: '2018-open-source'
 title: '오픈소스에 한걸음 더: 2018 오픈소스 개발자 이야기를 다녀와서'
+description: ''
 createdAt: '07-07-2018 21:45'
 thumbnail: '/images/microsoft.jpg'
 categories: ['retrospective']

@@ -1,6 +1,7 @@
 ---
 key: 'webpack-v4-output-management'
 title: '[webpack v4] Output Management'
+description: ''
 createdAt: '05-06-2018 11:16'
 thumbnail: '/images/webpack2.png'
 categories: ['development', 'webpack']

@@ -1,6 +1,7 @@
 ---
 key: '2021-retrospective'
 title: '4년만의 회고 - Goodbye, My Twenties'
+description: ''
 createdAt: '02-02-2022 13:03'
 thumbnail: '/images/inwang-horizon.png'
 place: 'Conhas, 서울특별시 용산구 한남동 이태원로55나길 22'

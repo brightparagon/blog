@@ -1,6 +1,7 @@
 ---
 key: 'walk-on-my-own-path'
 title: '나만의 길을 걷는 것'
+description: ''
 createdAt: '03-11-2018 17:58'
 thumbnail: '/images/recover.jpg'
 categories: ['life', 'growth']

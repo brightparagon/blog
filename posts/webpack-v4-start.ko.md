@@ -1,6 +1,7 @@
 ---
 key: 'webpack-v4-start'
 title: '[webpack v4] webpack v4 시작하기'
+description: ''
 createdAt: '02-23-2018 02:28'
 thumbnail: '/images/webpack2.png'
 categories: ['development', 'webpack']

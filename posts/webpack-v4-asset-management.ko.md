@@ -1,6 +1,7 @@
 ---
 key: 'webpack-v4-asset-management'
 title: '[webpack v4] Asset Management'
+description: ''
 createdAt: '04-08-2018 15:10'
 thumbnail: '/images/webpack2.png'
 categories: ['development', 'webpack']

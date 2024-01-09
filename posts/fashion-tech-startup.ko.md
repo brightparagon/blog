@@ -1,6 +1,7 @@
 ---
 key: 'fashion-tech-startup'
 title: '옷, 개인 그리고 패션테크 스타트업'
+description: ''
 createdAt: '08-13-2017 14:41'
 thumbnail: '/images/facebook.jpg'
 place: '테라로사 포스코센터점, 서울특별시 강남구 대치4동 테헤란로 440 포스코센터 1층'

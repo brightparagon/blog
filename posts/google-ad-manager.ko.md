@@ -1,6 +1,7 @@
 ---
 key: 'google-ad-manager'
 title: 'Google 광고에 대해 알아보자 - Google Ad Manager'
+description: ''
 createdAt: '04-22-2021 01:33'
 thumbnail: '/images/google-ad-manager.jpg'
 categories: ['guide']

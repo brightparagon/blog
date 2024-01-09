@@ -1,6 +1,7 @@
 ---
 key: '2017-retrospective'
 title: '되돌아보는 2017년'
+description: ''
 createdAt: '12-31-2017 17:17'
 thumbnail: '/images/2018.png'
 place: 'Cafe Knock, 경기도 용인시 기흥구 동백동 평촌2로1번길 35-1'

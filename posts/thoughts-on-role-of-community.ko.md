@@ -1,6 +1,7 @@
 ---
 key: 'thoughts-on-role-of-community'
 title: '커뮤니티의 역할에 대한 단상'
+description: ''
 createdAt: '03-31-2019 15:04'
 thumbnail: '/images/sky.jpg'
 thumbnailPosition: '0 35%'

@@ -1,6 +1,7 @@
 ---
 key: 'webpack-v4-development-configuration'
 title: '[webpack v4] Development 환경 구성하기'
+description: ''
 createdAt: '06-27-2018 23:51'
 thumbnail: '/images/webpack2.png'
 categories: ['development', 'webpack']

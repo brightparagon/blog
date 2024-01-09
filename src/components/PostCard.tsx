@@ -1,13 +1,15 @@
-import styled from '@emotion/styled'
+'use client'
+
 import Link from 'next/link'
 
-import CreatedAt from './CreatedAt'
 import { maxContentWidth, mediumWidth, smallWidth } from './Layout'
 import ReadingTime from './ReadingTime'
 import Tag from './Tag'
 
 import { blackCoral, blackCoralRGB, eerieBlack } from 'constants/colors'
+import styled from 'styled-components'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
+import { CreatedAt } from './CreatedAt'
 
 interface Props {
   post: Post
@@ -34,6 +36,7 @@ const PostCard = ({ post }: Props) => {
         <PostInformation>
           <h1>{data.title}</h1>
           <CreatedAt createdAt={data.createdAt} />
+
           {data.categories ? (
             <Badges>
               {data.categories.slice(0, 5).map((category) => (
@@ -41,6 +44,7 @@ const PostCard = ({ post }: Props) => {
               ))}
             </Badges>
           ) : null}
+
           {data.tags ? (
             <Badges>
               {data.tags.slice(0, 5).map((tag) => (
@@ -71,19 +75,19 @@ const StyledArticle = styled.article<StyleProps>`
 
   &:hover::before {
     opacity: 1;
-    transform: scale(1.009);
+    transform: scale(1.07);
   }
 
   &::before {
     position: absolute;
     content: '';
     opacity: 0;
-    box-shadow: 0 6px 500px rgba(${blackCoralRGB}, 0.8);
+    box-shadow: 5px 100px 500px rgba(${blackCoralRGB}, 0.9);
     top: 0;
-    left: -12px;
-    right: -12px;
-    bottom: -8px;
-    border-radius: 16px;
+    left: -16px;
+    right: -16px;
+    bottom: -12px;
+    border-radius: 20px;
     z-index: -1;
     transition-property: opacity, transform;
     transition-duration: 200ms;

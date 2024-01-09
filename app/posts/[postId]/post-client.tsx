@@ -1,15 +1,10 @@
-import { css } from '@emotion/react'
-import styled from '@emotion/styled'
-import { promises as fs } from 'fs'
-import matter from 'gray-matter'
-import Head from 'next/head'
-import path from 'path'
+'use client'
+
 import { useEffect } from 'react'
 import Markdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import gfm from 'remark-gfm'
 
-import CreatedAt from 'components/CreatedAt'
 import GoogleMap from 'components/GoogleMap'
 import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
 import ReadingTime from 'components/ReadingTime'
@@ -20,7 +15,8 @@ import { GA_MEASUREMENT_ID } from 'constants/env'
 import { markdownOptions } from 'utils/markdown'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
-import type { GetStaticPaths, GetStaticProps } from 'next'
+import { CreatedAt } from 'components/CreatedAt'
+import styled from 'styled-components'
 
 interface Props {
   post: Post
@@ -42,15 +38,14 @@ export const PostPage = ({ post }: Props) => {
 
   return (
     <Layout>
-      <Head>
-        <title>{data.title}</title>
-      </Head>
       <PostHead>
         {data.thumbnail ? (
           <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
         ) : null}
+
         <div className="PostHead__Info">
           <CreatedAt createdAt={data.createdAt} />
+
           {data.categories ? (
             <Badges>
               {data.categories.slice(0, 5).map((category) => (
@@ -58,6 +53,7 @@ export const PostPage = ({ post }: Props) => {
               ))}
             </Badges>
           ) : null}
+
           <ReadingTime readingTime={readingTime} />
         </div>
       </PostHead>
@@ -80,28 +76,19 @@ export const PostPage = ({ post }: Props) => {
             ))}
           </Badges>
         ) : null}
+
         {data.tags ? (
-          <Badges
-            css={css`
-              margin-top: 8px;
-            `}
-          >
+          <Badges $marginTop={8}>
             {data.tags.slice(0, 5).map((tag) => (
               <Tag key={tag} content={tag} color={blackCoral} />
             ))}
           </Badges>
         ) : null}
+
         {data.place ? (
           <>
             <p>
-              <span
-                css={css`
-                  color: ${blackCoral};
-                `}
-              >
-                Written at
-              </span>{' '}
-              {data.place}
+              <ColoredSpan color={blackCoral}>Written at</ColoredSpan> {data.place}
             </p>
             <GoogleMap place={data.place} />
           </>
@@ -109,50 +96,6 @@ export const PostPage = ({ post }: Props) => {
       </PostTail>
     </Layout>
   )
-}
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  if (context.params === undefined) {
-    return {
-      notFound: true,
-    }
-  }
-
-  const markdownDirectory = path.join(process.cwd(), `posts/${context.params.postId}.ko.md`)
-  const file = await fs.readFile(markdownDirectory, 'utf8')
-  const matteredFile = matter(file)
-
-  return {
-    props: {
-      post: {
-        content: matteredFile.content,
-        data: matteredFile.data,
-      },
-    },
-  }
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const postsDirectory = path.join(process.cwd(), 'posts')
-  const fileNames = await fs.readdir(postsDirectory, 'utf8')
-  const paths = fileNames
-    .filter((filename) => !filename.startsWith('pending'))
-    .map(async (filename) => {
-      const postPath = path.join(postsDirectory, filename)
-      const post = await fs.readFile(postPath, 'utf8')
-      const matteredPost = matter(post)
-
-      return {
-        params: {
-          postId: matteredPost.data.key,
-        },
-      }
-    })
-
-  return {
-    paths: await Promise.all(paths),
-    fallback: false,
-  }
 }
 
 const contentsWidth = 680
@@ -291,6 +234,10 @@ const Article = styled.article`
   }
 `
 
+const ColoredSpan = styled.span<{ color: string }>`
+  color: ${({ color }) => color};
+`
+
 const PostTail = styled.section`
   display: flex;
   flex-direction: column;
@@ -301,10 +248,11 @@ const PostTail = styled.section`
   font-weight: 400;
 `
 
-const Badges = styled.ul`
+const Badges = styled.ul<{ $marginTop?: number }>`
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
   list-style: none;
+  margin-top: ${({ $marginTop }) => $marginTop}px;
 `

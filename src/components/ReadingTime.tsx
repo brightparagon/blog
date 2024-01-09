@@ -1,17 +1,14 @@
-import styled from '@emotion/styled'
+'use client'
 
-import { salmon, cultured } from 'constants/colors'
-
-import type { FC } from 'react'
+import { cultured, salmon } from 'constants/colors'
+import styled from 'styled-components'
 
 interface Props {
   readingTime: string
 }
 
-const ReadingTime: FC<Props> = ({ readingTime }) => {
-  return (
-    <StyledSpan>{readingTime}</StyledSpan>
-  )
+const ReadingTime = ({ readingTime }: Props) => {
+  return <StyledSpan>{readingTime}</StyledSpan>
 }
 
 export default ReadingTime

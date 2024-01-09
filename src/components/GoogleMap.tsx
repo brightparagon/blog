@@ -1,7 +1,7 @@
-import { css } from '@emotion/react'
-import styled from '@emotion/styled'
+'use client'
 
 import { mediumWidth } from 'components/Layout'
+import styled from 'styled-components'
 
 interface Props {
   place: string
@@ -13,15 +13,7 @@ const GoogleMap = ({ place }: Props) => {
   return (
     <MapOuter>
       <Canvas>
-        <iframe
-          css={css`
-            width: 680px;
-            height: 400px;
-
-            @media (max-width: ${mediumWidth}px) {
-              height: 300px;
-            }
-          `}
+        <Iframe
           src={`${googleMapURL}&q=${encodeURI(place)}`}
           frameBorder={0}
           scrolling="no"
@@ -49,4 +41,13 @@ const Canvas = styled.div`
   background: none;
   width: 100%;
   height: 100%;
+`
+
+const Iframe = styled.iframe`
+  width: 680px;
+  height: 400px;
+
+  @media (max-width: ${mediumWidth}px) {
+    height: 300px;
+  }
 `

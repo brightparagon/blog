@@ -1,6 +1,7 @@
 ---
 key: 'toss'
 title: '토스, 살면서 한번쯤'
+description: '토스를 다니면서 맞이한 변화와 느끼고 깨달은 것을 풀어봅니다.'
 createdAt: '09-08-2023 17:03'
 thumbnail: '/images/2021-toss.jpeg'
 place: '배배 젤라또, 강원도 양양군 양양읍 월리 49-2'

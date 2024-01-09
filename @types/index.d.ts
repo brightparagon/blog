@@ -6,6 +6,7 @@ type Post = {
 type PostData = {
   key: string
   title: string
+  description?: string
   createdAt: string
   thumbnail: string
   thumbnailPosition?: string

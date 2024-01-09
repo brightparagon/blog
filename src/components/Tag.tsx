@@ -1,5 +1,6 @@
-import styled from '@emotion/styled'
+'use client'
 
+import styled from 'styled-components'
 import { blackCoral, cultured } from '../constants/colors'
 
 interface Props {

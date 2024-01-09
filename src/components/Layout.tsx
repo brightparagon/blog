@@ -1,31 +1,31 @@
+'use client'
+
 import Link from 'next/link'
-import styled from '@emotion/styled'
 
 import * as colors from 'constants/colors'
 
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import styled from 'styled-components'
 
 interface Props {
   children: ReactNode
 }
 
-const Layout: FC<Props> = ({ children }) => {
+const Layout = ({ children }: Props) => {
   return (
     <Container>
       <Navigation>
         <div className="Navigation__container">
-          <Link href="/"><h1>brightparagon</h1></Link>
+          <Link href="/">
+            <h3>Kyeongmo Noh</h3>
+          </Link>
           {/* <ul>
             <li><Link href="/">Home</Link></li>
           </ul> */}
         </div>
       </Navigation>
-      <Main>
-        {children}
-      </Main>
-      <Footer>
-        푸터를 뭘로 하지~ 🥱
-      </Footer>
+      <Main>{children}</Main>
+      <Footer>푸터를 뭘로 하지~ 🥱</Footer>
     </Container>
   )
 }

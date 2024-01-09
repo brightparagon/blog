@@ -1,4 +1,4 @@
-const wordsPerMinute = 300
+const wordsPerMinute = 220
 
 export function getReadingTime(text: string) {
   const numberOfWords = text.split(/\s/g).length

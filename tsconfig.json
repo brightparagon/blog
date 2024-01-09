@@ -1,6 +1,7 @@
 {
   "include": [
-    "./**/*"
+    "./**/*",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
@@ -43,7 +44,11 @@
     "declaration": true,
     "outDir": "dist",
     "strictPropertyInitialization": false,
-    "jsxImportSource": "@emotion/react",
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   }
 }

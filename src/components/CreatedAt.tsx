@@ -1,18 +1,12 @@
-import dayjs from 'dayjs'
+'use client'
 
-import type { FC } from 'react'
+import { format } from 'date-fns'
 
 interface Props {
   className?: string
   createdAt: string
 }
 
-const CreatedAt: FC<Props> = ({ className, createdAt }) => {
-  return (
-    <span className={className}>
-      {dayjs(createdAt).format('MMMM D YYYY h:mma')}
-    </span>
-  )
+export function CreatedAt({ className, createdAt }: Props) {
+  return <span className={className}>{format(createdAt, 'yyyy-MM-dd HH:mm')}</span>
 }
-
-export default CreatedAt

@@ -53,7 +53,6 @@ type MetadataProps = {
 export async function generateMetadata({ params }: MetadataProps) {
   const { postId } = params
   const postsDirectory = path.join(process.cwd(), 'posts')
-  // const postPath = path.join(postsDirectory, postId)
   const postPath = path.join(postsDirectory, `${postId}.ko.md`)
   const post = await fs.readFile(postPath, 'utf8')
   const matteredPost = matter(post)

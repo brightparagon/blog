@@ -3,6 +3,7 @@ key: 'make-choices'
 title: 'Jeff Bezos, founder of Amazon 그리고 삶'
 thumbnail: '/images/bezos.gif'
 createdAt: '08-02-2016 22:21'
+tags: ['2016']
 place: 'Starbucks, 경기도 용인시 기흥구 상하동 어정로 102'
 ---
 # Jeff Bezos, founder of Amazon 그리고 삶

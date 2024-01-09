@@ -59,6 +59,7 @@ export async function generateMetadata({ params }: MetadataProps) {
   const data = matteredPost.data as PostData
 
   return {
+    metadataBase: new URL('https://www.brightparagon.me'),
     title: data.title,
     openGraph: {
       title: data.title,

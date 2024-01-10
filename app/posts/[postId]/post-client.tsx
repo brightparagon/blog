@@ -1,22 +1,34 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
-import Markdown from 'react-markdown'
-import rehypeRaw from 'rehype-raw'
-import gfm from 'remark-gfm'
 
-import GoogleMap from 'components/GoogleMap'
-import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
-import ReadingTime from 'components/ReadingTime'
-import Tag from 'components/Tag'
+import { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
 
 import { blackCoral, eerieBlack, salmon } from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
-import { markdownOptions } from 'utils/markdown'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
-import { CreatedAt } from 'components/CreatedAt'
 import styled from 'styled-components'
+
+const DynamicLayout = dynamic(() => import('components/Layout'), {
+  loading: () => <p>Loading...</p>,
+})
+const DynamicCreatedAt = dynamic(() => import('components/CreatedAt'), {
+  loading: () => <p>Loading...</p>,
+})
+const DynamicTag = dynamic(() => import('components/Tag'), {
+  loading: () => <p>Loading...</p>,
+})
+const DynamicReadingTime = dynamic(() => import('components/ReadingTime'), {
+  loading: () => <p>Loading...</p>,
+})
+const DynamicContents = dynamic(() => import('components/Contents'), {
+  loading: () => <p>Loading...</p>,
+})
+const DynamicGoogleMap = dynamic(() => import('components/GoogleMap'), {
+  loading: () => <p>Loading...</p>,
+})
 
 interface Props {
   post: Post
@@ -37,42 +49,35 @@ export const PostPage = ({ post }: Props) => {
   }, [])
 
   return (
-    <Layout>
+    <DynamicLayout>
       <PostHead>
         {data.thumbnail ? (
           <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
         ) : null}
 
         <div className="PostHead__Info">
-          <CreatedAt createdAt={data.createdAt} />
+          <DynamicCreatedAt createdAt={data.createdAt} />
 
           {data.categories ? (
             <Badges>
               {data.categories.slice(0, 5).map((category) => (
-                <Tag key={category} content={category} color={eerieBlack} />
+                <DynamicTag key={category} content={category} color={eerieBlack} />
               ))}
             </Badges>
           ) : null}
 
-          <ReadingTime readingTime={readingTime} />
+          <DynamicReadingTime readingTime={readingTime} />
         </div>
       </PostHead>
       {/* <FloatingCard></FloatingCard> */}
       <Article>
-        <Markdown
-          components={markdownOptions.components}
-          remarkPlugins={[[gfm, { singleTilde: false }]]}
-          rehypePlugins={[rehypeRaw]}
-          linkTarget="_blank"
-        >
-          {content}
-        </Markdown>
+        <DynamicContents contents={content} />
       </Article>
       <PostTail>
         {data.categories ? (
           <Badges>
             {data.categories.slice(0, 5).map((category) => (
-              <Tag key={category} content={category} color={eerieBlack} />
+              <DynamicTag key={category} content={category} color={eerieBlack} />
             ))}
           </Badges>
         ) : null}
@@ -80,7 +85,7 @@ export const PostPage = ({ post }: Props) => {
         {data.tags ? (
           <Badges $marginTop={8}>
             {data.tags.slice(0, 5).map((tag) => (
-              <Tag key={tag} content={tag} color={blackCoral} />
+              <DynamicTag key={tag} content={tag} color={blackCoral} />
             ))}
           </Badges>
         ) : null}
@@ -90,11 +95,11 @@ export const PostPage = ({ post }: Props) => {
             <p>
               <ColoredSpan color={blackCoral}>Written at</ColoredSpan> {data.place}
             </p>
-            <GoogleMap place={data.place} />
+            <DynamicGoogleMap place={data.place} />
           </>
         ) : null}
       </PostTail>
-    </Layout>
+    </DynamicLayout>
   )
 }
 

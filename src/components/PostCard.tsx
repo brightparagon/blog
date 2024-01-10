@@ -9,7 +9,7 @@ import Tag from './Tag'
 import { blackCoral, blackCoralRGB, eerieBlack } from 'constants/colors'
 import styled from 'styled-components'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
-import { CreatedAt } from './CreatedAt'
+import CreatedAt from './CreatedAt'
 
 interface Props {
   post: Post

@@ -8,5 +8,5 @@ interface Props {
 }
 
 export default function CreatedAt({ className, createdAt }: Props) {
-  return <span className={className}>{format(createdAt, 'yyyy-MM-dd HH:mm')}</span>
+  return <span className={className}>{format(new Date(createdAt.replace(/-/g, '/')), 'yyyy-MM-dd HH:mm')}</span>
 }

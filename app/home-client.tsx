@@ -16,7 +16,7 @@ export const HomePage = ({ posts }: Props) => {
       <PostsGrid>
         {posts
           .sort((a, b) => {
-            if (isAfter(a.data.createdAt, b.data.createdAt)) {
+            if (isAfter(a.data.createdAt.replace(/-/g, '/'), b.data.createdAt.replace(/-/g, '/'))) {
               return -1
             }
 

@@ -14,6 +14,5 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
-  output: 'export',
   trailingSlash: true,
 }

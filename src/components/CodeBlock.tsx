@@ -3,11 +3,9 @@
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
-import type { ReactNode } from 'react'
-
 interface Props {
   language: string
-  children: ReactNode
+  children: string
 }
 
 const CodeBlock = ({ language, children }: Props) => {

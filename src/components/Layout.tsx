@@ -25,7 +25,7 @@ const Layout = ({ children }: Props) => {
         </div>
       </Navigation>
       <Main>{children}</Main>
-      <Footer>푸터를 뭘로 하지~ 🥱</Footer>
+      <Footer>푸터를 뭘로 하지~ 🥱 배효진</Footer>
     </Container>
   )
 }

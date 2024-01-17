@@ -14,4 +14,5 @@ type PostData = {
   categories: string[]
   tags: string[]
   isRowLong?: boolean
+  images: string[]
 }

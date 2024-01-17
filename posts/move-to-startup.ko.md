@@ -8,6 +8,24 @@ categories: ['life', 'growth', 'startup']
 tags: ['career', 'books', 'conglomerate', 'frontend', 'resume', 'english']
 place: '스타벅스 올림픽공원남문점, 서울특별시 송파구 방이1동 위례성대로 102 1층'
 isRowLong: true
+images: [
+  '/images/work.jpg',
+  '/images/books9.jpg',
+  '/images/books8.jpg',
+  '/images/books2.jpg',
+  '/images/study12.jpg',
+  '/images/mac4.jpg',
+  '/images/books7.jpg',
+  '/images/books6.jpg',
+  '/images/mac3.jpg',
+  '/images/study11.jpg',
+  '/images/study.jpg',
+  '/images/study10.jpg',
+  '/images/study9.jpg',
+  '/images/study8.jpg',
+  '/images/gopro.jpg',
+  '/images/ydjs.jpg',
+]
 ---
 # 지난 3년의 기록: 대기업에서 스타트업으로
 
@@ -188,20 +206,3 @@ Big과 Small을 각 양극단이라고 봤을때 모든 회사는 이 중간 어
 ## 마치며
 
 긴 글을 드디어 마무리한다. 대기업에서 스타트업으로 옮기기까지의 과정을 주로 이야기 했지만 써놓고 보니 사실 핵심은 '나를 이해하는 것'이지 않았나 싶다. 그리고 이 글은 Infra Engineer에서 Frontend Engineer로의 전환이라는 position-specific한 한정된 내용을 다루기 때문에 다른 포지션에 종사하는 분들에게는 별다른 도움이 안될지도 모르겠다는 생각도 든다. 그래도 나의 한 사례에 빗대어 다양한 상황들에 적용되어 방향 설정에 도움이 되기를 바라며 글을 마친다.
-
-![work](/images/work.jpg)
-![books](/images/books9.jpg)
-![books](/images/books8.jpg)
-![books](/images/books2.jpg)
-![study](/images/study12.jpg)
-![macbook](/images/mac4.jpg)
-![books](/images/books7.jpg)
-![books](/images/books6.jpg)
-![macbook](/images/mac3.jpg)
-![study](/images/study11.jpg)
-![study](/images/study.jpg)
-![study](/images/study10.jpg)
-![study](/images/study9.jpg)
-![study](/images/study8.jpg)
-![study](/images/gopro.jpg)
-![study](/images/ydjs.jpg)

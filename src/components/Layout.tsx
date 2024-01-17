@@ -33,7 +33,6 @@ const Layout = ({ children }: Props) => {
 export default Layout
 
 const navigationHeight = 60
-export const largeWidth = 1200
 export const maxContentWidth = 1024
 export const mediumWidth = 768
 export const smallWidth = 480

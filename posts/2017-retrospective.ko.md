@@ -7,6 +7,22 @@ thumbnail: '/images/2018.png'
 place: 'Cafe Knock, 경기도 용인시 기흥구 동백동 평촌2로1번길 35-1'
 categories: ['retrospective', 'life', 'growth']
 tags: ['2017', '2018', '회고', '반성']
+images: [
+  '/images/study2.jpg',
+  '/images/books5.jpg',
+  '/images/react-conf.jpg',
+  '/images/react-conf2.jpg',
+  '/images/facebook2.jpg',
+  '/images/study3.jpg',
+  '/images/study4.jpg',
+  '/images/mac.jpg',
+  '/images/study.jpg',
+  '/images/study7.jpg',
+  '/images/mac2.jpg',
+  '/images/study6.jpg',
+  '/images/radiobay.jpg',
+  '/images/study5.jpg',
+]
 ---
 # 되돌아보는 2017년
 
@@ -174,20 +190,3 @@ Wordpress와 Medium 두 플랫폼에서 블로그를 하고 있는데 2017년 �
 그래도 큰 가닥에는 변함이 없는 것 같다. Web Frontend와 Machine Learning 두가지의 큰 줄기로 공부와 개인 프로젝트를 이어나가고 싶다. 두 분야를 공부하다가 나중에는 대체 어떻게 연결시켜 하나의 커리어로 만들어나갈지 전혀 감이 오지 않지만 인생은 저지르고 보는 것 아니겠는가? 2018년에도 열심히 저지르고 열심히 회고하자. 아쉬운 2017년 안녕!
 
 ## 2017년의 사진들
-
-<div>
-  <img alt="study" src="/images/study2.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="books" src="/images/books5.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="react conference" src="/images/react-conf.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="react-conf" src="/images/react-conf2.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="facebook" src="/images/facebook2.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="study" src="/images/study3.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="study" src="/images/study4.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="macbook" src="/images/mac.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="study" src="/images/study.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="study" src="/images/study7.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="macbook" src="/images/mac2.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="study" src="/images/study6.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="radiobay" src="/images/radiobay.jpg" style="width: 49.6%; height: auto;" />
-  <img alt="study" src="/images/study5.jpg" style="width: 49.6%; height: auto;" />
-</div>

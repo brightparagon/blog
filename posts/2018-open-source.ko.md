@@ -7,6 +7,13 @@ thumbnail: '/images/microsoft.jpg'
 categories: ['retrospective']
 tags: ['opensource', 'community', 'engineer', 'diversity', 'ecosystem', 'elastic', 'github']
 place: 'Cafe Knock, 경기도 용인시 기흥구 동백동 평촌2로1번길 35-1'
+images: [
+  '/images/microsoft.jpg',
+  '/images/microsoft2.jpg',
+  '/images/microsoft3.jpg',
+  '/images/microsoft4.jpg',
+  '/images/burger.jpg',
+]
 ---
 # 오픈소스에 한걸음 더: 2018 오픈소스 개발자 이야기를 다녀와서
 
@@ -126,9 +133,3 @@ Software Engineer 안에서도 다양한 직군들이 있는 것을 보고 놀�
 
 참고하면 좋은 링크
 - http://it.chosun.com/site/data/html_dir/2018/05/03/2018050385084.html
-
-![microsoft](/images/microsoft.jpg)
-![microsoft](/images/microsoft2.jpg)
-![microsoft](/images/microsoft3.jpg)
-![microsoft](/images/microsoft4.jpg)
-![burger](/images/burger.jpg)

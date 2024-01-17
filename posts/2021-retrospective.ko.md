@@ -8,7 +8,35 @@ place: 'Conhas, 서울특별시 용산구 한남동 이태원로55나길 22'
 categories: ['retrospective']
 tags: ['2021', '회고',]
 isRowLong: true
+images: [
+  '/images/2018-japan-cat.jpeg',
+  '/images/2018-olympic-praza.jpeg',
+  '/images/2019-bridge.jpeg',
+  '/images/2019-home.jpeg',
+  '/images/2019-inwang.jpeg',
+  '/images/2019-jeju-biotopia-2.jpeg',
+  '/images/2019-jeju-biotopia.jpeg',
+  '/images/2019-yeouido.jpeg',
+  '/images/2020-fire.jpeg',
+  '/images/2020-jeju-sun.jpeg',
+  '/images/2020-olympic-park.jpeg',
+  '/images/2020-park.jpeg',
+  '/images/2020-river.jpeg',
+  '/images/2020-tera.jpeg',
+  '/images/2020-tree.jpeg',
+  '/images/2021-apt.jpeg',
+  '/images/2021-cafe.jpeg',
+  '/images/2021-daejeon-train.jpeg',
+  '/images/2021-friends-2.JPG',
+  '/images/2021-friends.JPG',
+  '/images/2021-home-2.jpeg',
+  '/images/2021-home.jpeg',
+  '/images/2021-jeju-biotopia.jpeg',
+  '/images/2021-jeju-oreum.jpeg',
+  '/images/2021-toss-kit.jpeg',
+]
 ---
+
 # 4년만의 회고 - Goodbye, My Twenties
 
 참 시간이 많이 흘렀다. 마지막으로 쓴 회고는 2018년에 작성한 [지난 3년의 기록: 대기업에서 스타트업으로](/posts/2017-retrospective)다. 지난 4년간 노트에 많은 글을 썼는데 현생에 파묻혀 사느라 블로그에는 올리지 못했다. 그간 많은 일이 있었는데 세부적인 것은 각각 다른 글에서 다루기로 하고, 여기선 지난 4년을 대략적으로만 다뤄봐야겠다.
@@ -277,31 +305,3 @@ ODK는 입사했을때 이미 재택근무가 가능한 환경이었고 사실 �
 이렇게 나의 20대가 지나갔다. 엄청 치열하게는 아니었지만 추구하는 방향 안에서 항상 배움을 얻으며 살아왔다. 그리고 결과가 어떻게 되든 이렇게 도전한 것에 대해서 어떤 후회도 미련도 남지 않는다. 생각보다 다양한 경험을 하지 못하고 너무 빨리 20대가 지나가버린 것 같아 종종 슬픔이 찾아오지만 아무렴 어떤가 살고싶은 대로 살고있는데. 올 2022년도, 무슨 일이 펼쳐질지 모르는 30대도 온힘을 다해 보내자. 후회하지 않게.
 
 ## 2017~2021 Gallery
-
-[instagram](https://www.instagram.com/brightparagon/)
-
-![cat](/images/2018-japan-cat.jpeg)
-![olympic praza](/images/2018-olympic-praza.jpeg)
-![bridge](/images/2019-bridge.jpeg)
-![home](/images/2019-home.jpeg)
-![inwang](/images/2019-inwang.jpeg)
-![biotopia](/images/2019-jeju-biotopia-2.jpeg)
-![biotopia](/images/2019-jeju-biotopia.jpeg)
-![yeouido](/images/2019-yeouido.jpeg)
-![fire](/images/2020-fire.jpeg)
-![jeju sun](/images/2020-jeju-sun.jpeg)
-![olympic park](/images/2020-olympic-park.jpeg)
-![olympic park](/images/2020-park.jpeg)
-![river](/images/2020-river.jpeg)
-![terarosa](/images/2020-tera.jpeg)
-![tree](/images/2020-tree.jpeg)
-![olympic apt](/images/2021-apt.jpeg)
-![cafe](/images/2021-cafe.jpeg)
-![daejeon train](/images/2021-daejeon-train.jpeg)
-![friends](/images/2021-friends-2.JPG)
-![friends](/images/2021-friends.JPG)
-![home](/images/2021-home-2.jpeg)
-![home](/images/2021-home.jpeg)
-![biotopia](/images/2021-jeju-biotopia.jpeg)
-![jeju oreum](/images/2021-jeju-oreum.jpeg)
-![toss](/images/2021-toss-kit.jpeg)

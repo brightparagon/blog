@@ -3,29 +3,19 @@
 import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 
-import { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
+import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
 
 import { blackCoral, eerieBlack, salmon } from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
 import styled from 'styled-components'
+import Image from 'next/image'
+import CreatedAt from 'components/CreatedAt'
+import Tag from 'components/Tag'
+import ReadingTime from 'components/ReadingTime'
+import Contents from 'components/Contents'
 
-const DynamicLayout = dynamic(() => import('components/Layout'), {
-  loading: () => <p>Loading...</p>,
-})
-const DynamicCreatedAt = dynamic(() => import('components/CreatedAt'), {
-  loading: () => <p>Loading...</p>,
-})
-const DynamicTag = dynamic(() => import('components/Tag'), {
-  loading: () => <p>Loading...</p>,
-})
-const DynamicReadingTime = dynamic(() => import('components/ReadingTime'), {
-  loading: () => <p>Loading...</p>,
-})
-const DynamicContents = dynamic(() => import('components/Contents'), {
-  loading: () => <p>Loading...</p>,
-})
 const DynamicGoogleMap = dynamic(() => import('components/GoogleMap'), {
   loading: () => <p>Loading...</p>,
 })
@@ -49,35 +39,53 @@ export const PostPage = ({ post }: Props) => {
   }, [])
 
   return (
-    <DynamicLayout>
+    <Layout>
       <PostHead>
         {data.thumbnail ? (
           <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
         ) : null}
 
         <div className="PostHead__Info">
-          <DynamicCreatedAt createdAt={data.createdAt} />
+          <CreatedAt createdAt={data.createdAt} />
 
           {data.categories ? (
             <Badges>
               {data.categories.slice(0, 5).map((category) => (
-                <DynamicTag key={category} content={category} color={eerieBlack} />
+                <Tag key={category} content={category} color={eerieBlack} />
               ))}
             </Badges>
           ) : null}
 
-          <DynamicReadingTime readingTime={readingTime} />
+          <ReadingTime readingTime={readingTime} />
         </div>
       </PostHead>
-      {/* <FloatingCard></FloatingCard> */}
       <Article>
-        <DynamicContents contents={content} />
+        <Contents contents={content} />
       </Article>
+
+      {data.images != null ? (
+        <>
+          {data.images.map((imageUrl) => {
+            return (
+              <ImageWrapper key={imageUrl}>
+                <Image
+                  className="fixedImage"
+                  width={contentsWidth}
+                  height={contentsWidth}
+                  src={imageUrl}
+                  alt={imageUrl}
+                />
+              </ImageWrapper>
+            )
+          })}
+        </>
+      ) : null}
+
       <PostTail>
         {data.categories ? (
           <Badges>
             {data.categories.slice(0, 5).map((category) => (
-              <DynamicTag key={category} content={category} color={eerieBlack} />
+              <Tag key={category} content={category} color={eerieBlack} />
             ))}
           </Badges>
         ) : null}
@@ -85,7 +93,7 @@ export const PostPage = ({ post }: Props) => {
         {data.tags ? (
           <Badges $marginTop={8}>
             {data.tags.slice(0, 5).map((tag) => (
-              <DynamicTag key={tag} content={tag} color={blackCoral} />
+              <Tag key={tag} content={tag} color={blackCoral} />
             ))}
           </Badges>
         ) : null}
@@ -99,7 +107,7 @@ export const PostPage = ({ post }: Props) => {
           </>
         ) : null}
       </PostTail>
-    </DynamicLayout>
+    </Layout>
   )
 }
 
@@ -143,37 +151,6 @@ const PostHead = styled.section`
     }
   }
 `
-
-// const FloatingCard = styled.section`
-//   position: fixed;
-//   left: 0px;
-//   top: 0px;
-//   display: flex;
-//   width: 300px;
-//   height: 500px;
-//   background-color: ${cultured};
-//   z-index: 1;
-
-//   &:hover::before {
-//     opacity: 1;
-//     transform: scale(1.009);
-//   }
-
-//   &::before {
-//     position: absolute;
-//     content: '';
-//     opacity: 0.7;
-//     box-shadow: 0 3px 30px rgb(0, 0, 0, 0.15);
-//     top: -8px;
-//     left: -8px;
-//     right: -8px;
-//     bottom: -8px;
-//     border-radius: 2px;
-//     z-index: -1;
-//     transition-property: opacity, transform;
-//     transition-duration: 200ms;
-//   }
-// `
 
 const Article = styled.article`
   position: relative;
@@ -248,6 +225,7 @@ const PostTail = styled.section`
   flex-direction: column;
   max-width: ${contentsWidth}px;
   width: 100%;
+  margin-top: 40px;
   margin-bottom: 80px;
   font-size: 20px;
   font-weight: 400;
@@ -260,4 +238,15 @@ const Badges = styled.ul<{ $marginTop?: number }>`
   margin: 0;
   list-style: none;
   margin-top: ${({ $marginTop }) => $marginTop}px;
+`
+
+const ImageWrapper = styled.div`
+  width: ${contentsWidth}px;
+  position: relative;
+
+  .fixedImage {
+    object-fit: contain !important;
+    position: relative !important;
+    height: auto !important;
+  }
 `

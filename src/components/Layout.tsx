@@ -16,16 +16,22 @@ const Layout = ({ children }: Props) => {
     <Container>
       <Navigation>
         <div className="Navigation__container">
-          <Link href="/">
-            <h3>Kyeongmo Noh</h3>
-          </Link>
-          {/* <ul>
-            <li><Link href="/">Home</Link></li>
-          </ul> */}
+          <ul>
+            <li>
+              <Link href="/">
+                <h4>Home</h4>
+              </Link>
+            </li>
+            <li>
+              <Link href="/kyeongmo">
+                <h4>Kyeongmo Noh</h4>
+              </Link>
+            </li>
+          </ul>
         </div>
       </Navigation>
       <Main>{children}</Main>
-      <Footer>푸터를 뭘로 하지~ 🥱 배효진</Footer>
+      <Footer>푸터푸터</Footer>
     </Container>
   )
 }
@@ -49,7 +55,7 @@ const Navigation = styled.nav`
     width: ${maxContentWidth}px;
     height: 100%;
 
-    h1 {
+    h4 {
       cursor: pointer;
 
       :hover {
@@ -58,6 +64,7 @@ const Navigation = styled.nav`
     }
 
     ul {
+      display: flex;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -67,11 +74,11 @@ const Navigation = styled.nav`
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        width: 50px;
         height: 100%;
         cursor: pointer;
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 600;
+        margin-right: 20px;
 
         a {
           text-decoration: none;

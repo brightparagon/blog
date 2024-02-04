@@ -9,12 +9,11 @@ import { blackCoral, eerieBlack, salmon } from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
-import styled from 'styled-components'
-import Image from 'next/image'
-import CreatedAt from 'components/CreatedAt'
-import Tag from 'components/Tag'
-import ReadingTime from 'components/ReadingTime'
 import Contents from 'components/Contents'
+import CreatedAt from 'components/CreatedAt'
+import ReadingTime from 'components/ReadingTime'
+import Tag from 'components/Tag'
+import styled from 'styled-components'
 
 const DynamicGoogleMap = dynamic(() => import('components/GoogleMap'), {
   loading: () => <p>Loading...</p>,
@@ -68,7 +67,7 @@ export const PostPage = ({ post }: Props) => {
           {data.images.map((imageUrl) => {
             return (
               <ImageWrapper key={imageUrl}>
-                <Image
+                <img
                   className="fixedImage"
                   width={contentsWidth}
                   height={contentsWidth}

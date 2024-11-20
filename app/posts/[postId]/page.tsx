@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
+import { isPublishReadyPost } from 'utils/post-file'
 import { PostPage } from './post-client'
 
 // TODO: ko 부분 변수화 i18n
@@ -33,7 +34,7 @@ export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), 'posts')
   const fileNames = await fs.readdir(postsDirectory, 'utf8')
   const paths = fileNames
-    .filter((filename) => !filename.startsWith('pending'))
+    .filter(isPublishReadyPost)
     .map(async (filename) => {
       const postPath = path.join(postsDirectory, filename)
       const post = await fs.readFile(postPath, 'utf8')

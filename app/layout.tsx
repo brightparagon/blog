@@ -1,6 +1,6 @@
 import { GlobalStyle } from 'components/GlobalStyle'
 import { GA_MEASUREMENT_ID } from 'constants/env'
-import { StyledComponentsRegistry } from 'lib/registry'
+import { StyledComponentsRegistry } from 'utils/registry'
 import { Metadata } from 'next'
 import { ReactNode } from 'react'
 

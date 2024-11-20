@@ -68,30 +68,10 @@ const StyledArticle = styled.article<StyleProps>`
   flex-direction: column;
 
   grid-column: ${({ data: { isRowLong } }) => (isRowLong ? '1 / 3' : null)};
-  margin-top: 40px;
+  margin-top: 20px;
   cursor: pointer;
   border-radius: 10px;
   z-index: 1;
-
-  &:hover::before {
-    opacity: 1;
-    transform: scale(1.07);
-  }
-
-  &::before {
-    position: absolute;
-    content: '';
-    opacity: 0;
-    box-shadow: 5px 100px 500px rgba(${blackCoralRGB}, 0.9);
-    top: 0;
-    left: -16px;
-    right: -16px;
-    bottom: -12px;
-    border-radius: 20px;
-    z-index: -1;
-    transition-property: opacity, transform;
-    transition-duration: 200ms;
-  }
 `
 
 const PostHead = styled.div`
@@ -106,7 +86,7 @@ const PostHead = styled.div`
 const Thumbnail = styled.img<StyleProps>`
   object-fit: cover;
   width: 100%;
-  height: ${({ data: { isRowLong } }) => (isRowLong ? '460px' : '280px')};
+  height: ${({ data: { isRowLong } }) => (isRowLong ? '600px' : '300px')};
 
   @media (max-width: ${maxContentWidth}px) {
     height: ${({ data: { isRowLong } }) => (isRowLong ? '350px' : '200px')};

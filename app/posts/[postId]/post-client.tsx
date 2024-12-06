@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
 
-import { blackCoral, eerieBlack, salmon } from 'constants/colors'
+import { blackCoral, eerieBlack, mainThemeColor } from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
@@ -191,8 +191,9 @@ const Article = styled.article`
   }
 
   a {
-    color: ${salmon};
+    color: ${mainThemeColor};
     text-decoration: none;
+    font-weight: 700;
   }
 
   iframe {

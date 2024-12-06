@@ -1,7 +1,7 @@
 'use client'
 
 import styled from 'styled-components'
-import { blackCoral, cultured } from '../constants/colors'
+import { cultured, eerieBlack } from '../constants/colors'
 
 interface Props {
   className?: string
@@ -9,7 +9,7 @@ interface Props {
   color?: string
 }
 
-const Tag = ({ className, content, color = blackCoral }: Props) => {
+const Tag = ({ className, content, color = eerieBlack }: Props) => {
   return (
     <StyledSpan className={className} color={color}>
       {content}
@@ -24,7 +24,7 @@ type StyledSpanProps = Pick<Props, 'color'>
 const StyledSpan = styled.span<StyledSpanProps>`
   display: flex;
   align-items: center;
-  padding: 3px 6px;
+  padding: 6px 12px;
   margin: 2px 4px 2px 0;
   height: 26px;
   font-weight: 400;

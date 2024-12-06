@@ -1,6 +1,6 @@
 'use client'
 
-import { cultured, salmon } from 'constants/colors'
+import { cultured, mainThemeColor } from 'constants/colors'
 import styled from 'styled-components'
 
 interface Props {
@@ -13,14 +13,14 @@ const ReadingTime = ({ readingTime }: Props) => {
 
 export default ReadingTime
 
-const StyledSpan = styled.span`
+const StyledSpan = styled.div`
   display: flex;
   align-items: center;
-  padding: 3px 6px;
-  min-width: 50px;
-  height: 26px;
+  padding: 6px 12px;
+  min-width: 48px;
+  min-height: 24px;
   font-weight: 400;
-  background-color: ${salmon};
+  background-color: ${mainThemeColor};
   color: ${cultured};
-  border-radius: 10px;
+  border-radius: 12px;
 `

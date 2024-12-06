@@ -1,3 +1,3 @@
 export function isPublishReadyPost(filename: string) {
-  return !filename.startsWith('pending');
+  return !filename.startsWith('pending')
 }

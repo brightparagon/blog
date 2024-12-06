@@ -6,7 +6,6 @@ import { maxContentWidth, mediumWidth, smallWidth } from './Layout'
 import ReadingTime from './ReadingTime'
 import Tag from './Tag'
 
-import { blackCoral, blackCoralRGB, eerieBlack } from 'constants/colors'
 import styled from 'styled-components'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 import CreatedAt from './CreatedAt'
@@ -40,7 +39,7 @@ const PostCard = ({ post }: Props) => {
           {data.categories ? (
             <Badges>
               {data.categories.slice(0, 5).map((category) => (
-                <Tag key={category} content={category} color={eerieBlack} />
+                <Tag key={category} content={category} />
               ))}
             </Badges>
           ) : null}
@@ -48,7 +47,7 @@ const PostCard = ({ post }: Props) => {
           {data.tags ? (
             <Badges>
               {data.tags.slice(0, 5).map((tag) => (
-                <Tag key={tag} content={tag} color={blackCoral} />
+                <Tag key={tag} content={tag} />
               ))}
             </Badges>
           ) : null}
@@ -87,6 +86,7 @@ const Thumbnail = styled.img<StyleProps>`
   object-fit: cover;
   width: 100%;
   height: ${({ data: { isRowLong } }) => (isRowLong ? '600px' : '300px')};
+  border-radius: 10px;
 
   @media (max-width: ${maxContentWidth}px) {
     height: ${({ data: { isRowLong } }) => (isRowLong ? '350px' : '200px')};

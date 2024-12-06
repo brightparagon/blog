@@ -1,5 +1,5 @@
-import Layout from 'components/Layout';
-import { useEffect } from 'react';
+import Layout from 'components/Layout'
+import { useEffect } from 'react'
 
 export function ErrorPage({ error }: { error: Error & { digest?: string }; reset: () => void }) {
   useEffect(() => {

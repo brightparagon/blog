@@ -11,9 +11,9 @@ interface Props {
 
 const Tag = ({ className, content, color = eerieBlack }: Props) => {
   return (
-    <StyledSpan className={className} color={color}>
+    <Styled className={className} color={color}>
       {content}
-    </StyledSpan>
+    </Styled>
   )
 }
 
@@ -21,12 +21,12 @@ export default Tag
 
 type StyledSpanProps = Pick<Props, 'color'>
 
-const StyledSpan = styled.span<StyledSpanProps>`
+const Styled = styled.div<StyledSpanProps>`
   display: flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 6px 10px;
   margin: 2px 4px 2px 0;
-  height: 26px;
+  min-height: 26px;
   font-weight: 400;
   background-color: ${({ color }) => color};
   color: ${cultured};

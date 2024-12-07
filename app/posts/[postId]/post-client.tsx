@@ -34,6 +34,7 @@ export const PostPage = ({ post }: Props) => {
       page_location: window.location.href,
       page_path: window.location.pathname,
       send_to: GA_MEASUREMENT_ID,
+      referrer: document.referrer,
     })
   }, [])
 
@@ -50,7 +51,7 @@ export const PostPage = ({ post }: Props) => {
           {data.categories ? (
             <Badges>
               {data.categories.slice(0, 5).map((category) => (
-                <Tag key={category} content={category} color={eerieBlack} />
+                <Tag key={category} content={category} />
               ))}
             </Badges>
           ) : null}
@@ -63,28 +64,22 @@ export const PostPage = ({ post }: Props) => {
       </Article>
 
       {data.images != null ? (
-        <>
+        <ImageContainer>
           {data.images.map((imageUrl) => {
             return (
               <ImageWrapper key={imageUrl}>
-                <img
-                  className="fixedImage"
-                  width={contentsWidth}
-                  height={contentsWidth}
-                  src={imageUrl}
-                  alt={imageUrl}
-                />
+                <StyledImage src={imageUrl} alt={imageUrl} />
               </ImageWrapper>
             )
           })}
-        </>
+        </ImageContainer>
       ) : null}
 
       <PostTail>
         {data.categories ? (
           <Badges>
             {data.categories.slice(0, 5).map((category) => (
-              <Tag key={category} content={category} color={eerieBlack} />
+              <Tag key={category} content={category} />
             ))}
           </Badges>
         ) : null}
@@ -92,7 +87,7 @@ export const PostPage = ({ post }: Props) => {
         {data.tags ? (
           <Badges $marginTop={8}>
             {data.tags.slice(0, 5).map((tag) => (
-              <Tag key={tag} content={tag} color={blackCoral} />
+              <Tag key={tag} content={tag} />
             ))}
           </Badges>
         ) : null}
@@ -138,12 +133,16 @@ const PostHead = styled.section`
   .PostHead__Info {
     display: flex;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    max-width: ${contentsWidth}px;
+    max-width: 100%;
     width: 100%;
     height: 30px;
     font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+    @media (max-width: ${mediumWidth}px) {
+      margin-top: 16px;
+    }
 
     span {
       margin-right: 20px;
@@ -155,19 +154,23 @@ const Article = styled.article`
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: ${contentsWidth}px;
   width: 100%;
+  max-width: ${contentsWidth}px;
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0;
-  margin-bottom: 40px;
   word-wrap: break-word;
+  margin-bottom: 16px;
 
   h1 {
     display: inline-block;
-    margin: 50px 0;
     font-size: 46px;
     line-height: 56px;
+    margin: 40px 0;
+
+    @media (max-width: ${mediumWidth}px) {
+      margin: 20px 0;
+    }
   }
 
   p {
@@ -223,12 +226,10 @@ const ColoredSpan = styled.span<{ color: string }>`
 const PostTail = styled.section`
   display: flex;
   flex-direction: column;
-  max-width: ${contentsWidth}px;
   width: 100%;
-  margin-top: 40px;
-  margin-bottom: 80px;
-  font-size: 20px;
-  font-weight: 400;
+  max-width: ${contentsWidth}px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 `
 
 const Badges = styled.ul<{ $marginTop?: number }>`
@@ -240,13 +241,20 @@ const Badges = styled.ul<{ $marginTop?: number }>`
   margin-top: ${({ $marginTop }) => $marginTop}px;
 `
 
-const ImageWrapper = styled.div`
-  width: ${contentsWidth}px;
-  position: relative;
+const ImageContainer = styled.div`
+  width: 100%;
+  max-width: ${contentsWidth}px;
+`
 
-  .fixedImage {
-    object-fit: contain !important;
-    position: relative !important;
-    height: auto !important;
-  }
+const ImageWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  margin-top: 8px;
+`
+
+const StyledImage = styled.img`
+  object-fit: contain !important;
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
 `

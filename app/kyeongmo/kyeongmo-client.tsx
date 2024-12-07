@@ -9,13 +9,13 @@ export function KyeongmoPage() {
     <Layout>
       <Main>
         <NameContainer>
-          <Name>Kyeongmo Noh,</Name>
-          <span>Software Engineer</span>
+          <Name>Kyeongmo Noh</Name>
+          <Name>- Software Engineer</Name>
           <a href="https://www.instagram.com/brightparagon" rel="noreferrer">
             <Image src="/images/instagram.png" />
           </a>
         </NameContainer>
-        <span>서울</span>
+        <Paragraph>Seoul</Paragraph>
         <Contents>
           <Paragraph>한국어, 영어</Paragraph>
           <Paragraph>
@@ -23,7 +23,7 @@ export function KyeongmoPage() {
           </Paragraph>
           <br />
           <Paragraph>사업의 0 to 1을 만들어내는 모든 것 탐구중</Paragraph>
-          <Paragraph>사람, 주변, 운동, 문학, 물리학, 여행</Paragraph>
+          <Paragraph>심리학, 운동, 문학, 물리학, 여행</Paragraph>
         </Contents>
       </Main>
     </Layout>

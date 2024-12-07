@@ -22,16 +22,23 @@ const PostCard = ({ post }: Props) => {
   return (
     <StyledArticle data={data}>
       <Link href={`/posts/${data.key}`}>
-        <PostHead>
-          <ReadingTime readingTime={readingTime} />
-        </PostHead>
-        <Thumbnail
-          data={data}
-          className="Thumbnail"
-          src={data.thumbnail}
-          alt={`post card thumbnail ${thumbnailAlt}`}
-          style={{ objectPosition: data.thumbnailPosition }}
-        />
+        <ThumbnailContainer>
+          <Thumbnail
+            data={data}
+            className="Thumbnail"
+            src={data.thumbnail}
+            alt={`post card thumbnail ${thumbnailAlt}`}
+            style={{ objectPosition: data.thumbnailPosition }}
+          />
+          <ReadingTime
+            readingTime={readingTime}
+            style={{
+              position: 'absolute',
+              top: '8px',
+              right: '8px',
+            }}
+          />
+        </ThumbnailContainer>
         <PostInformation>
           <h1>{data.title}</h1>
           <CreatedAt createdAt={data.createdAt} />
@@ -65,21 +72,19 @@ const StyledArticle = styled.article<StyleProps>`
   position: relative;
   display: flex;
   flex-direction: column;
-
   grid-column: ${({ data: { isRowLong } }) => (isRowLong ? '1 / 3' : null)};
-  margin-top: 20px;
   cursor: pointer;
   border-radius: 10px;
   z-index: 1;
+  margin-top: 24px;
+
+  @media (max-width: ${mediumWidth}px) {
+    margin-top: 12px;
+  }
 `
 
-const PostHead = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 12px 0;
-  width: 100%;
-  height: 60px;
+const ThumbnailContainer = styled.div`
+  position: relative;
 `
 
 const Thumbnail = styled.img<StyleProps>`
@@ -115,8 +120,8 @@ const PostInformation = styled.div`
 const Badges = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 8px;
-  list-style: none;
+  margin-top: 4px;
 `

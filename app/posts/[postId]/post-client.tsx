@@ -14,6 +14,7 @@ import CreatedAt from 'components/CreatedAt'
 import ReadingTime from 'components/ReadingTime'
 import Tag from 'components/Tag'
 import styled from 'styled-components'
+import { Post } from '@types'
 
 const DynamicGoogleMap = dynamic(() => import('components/GoogleMap'), {
   loading: () => <p>Loading...</p>,

@@ -9,6 +9,7 @@ import Tag from './Tag'
 import styled from 'styled-components'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 import CreatedAt from './CreatedAt'
+import { Post } from '@types'
 
 interface Props {
   post: Post

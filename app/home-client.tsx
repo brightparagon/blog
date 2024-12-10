@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import Layout, { maxContentWidth, mediumWidth } from '../src/components/Layout'
 import PostCard from '../src/components/PostCard'
+import { Post } from '@types'
 
 interface Props {
   posts: Post[]

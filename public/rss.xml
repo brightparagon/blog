@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Kyeongmo Noh]]></title>
+        <description><![CDATA[일상에서 깨달은 것을 정리합니다.]]></description>
+        <link>https://www.brightparagon.me</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Tue, 10 Dec 2024 10:32:36 GMT</lastBuildDate>
+        <atom:link href="https://www.brightparagon.me/rss.xml" rel="self" type="application/rss+xml"/>
+        <language><![CDATA[ko]]></language>
+        <item>
+            <title><![CDATA[되돌아보는 2017년]]></title>
+            <link>https://www.brightparagon.me/2017-retrospective</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/2017-retrospective</guid>
+            <pubDate>Sun, 31 Dec 2017 10:17:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[오픈소스에 한걸음 더: 2018 오픈소스 개발자 이야기를 다녀와서]]></title>
+            <link>https://www.brightparagon.me/2018-open-source</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/2018-open-source</guid>
+            <pubDate>Sat, 07 Jul 2018 14:45:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[4년만의 회고 - Goodbye, My Twenties]]></title>
+            <link>https://www.brightparagon.me/2021-retrospective</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/2021-retrospective</guid>
+            <pubDate>Wed, 02 Feb 2022 06:03:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Egoless, 나를 잠시 버리는 기술]]></title>
+            <description><![CDATA[내 정체성과 가치관을 필요할때 내려놓을 수 있다면, 더 유연하고 포용적인 사람으로 성장할 수 있지 않을까라는 물음에서 이야기를 전개해봅니다.]]></description>
+            <link>https://www.brightparagon.me/become-egoless-when-needed</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/become-egoless-when-needed</guid>
+            <pubDate>Fri, 06 Dec 2024 09:19:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[옷, 개인 그리고 패션테크 스타트업]]></title>
+            <link>https://www.brightparagon.me/fashion-tech-startup</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/fashion-tech-startup</guid>
+            <pubDate>Sun, 13 Aug 2017 07:41:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Google 광고에 대해 알아보자 - Google Ad Manager]]></title>
+            <link>https://www.brightparagon.me/google-ad-manager</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/google-ad-manager</guid>
+            <pubDate>Wed, 21 Apr 2021 18:33:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[무례란 무엇인가]]></title>
+            <link>https://www.brightparagon.me/impolite</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/impolite</guid>
+            <pubDate>Sun, 02 Jul 2017 10:56:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[SK에서 나는 무엇을 배웠나]]></title>
+            <link>https://www.brightparagon.me/learned-from-sk</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/learned-from-sk</guid>
+            <pubDate>Sun, 09 Jul 2017 15:49:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[나는 주체적으로 살고 있는 걸까?]]></title>
+            <link>https://www.brightparagon.me/live-autonomously</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/live-autonomously</guid>
+            <pubDate>Thu, 11 May 2017 03:29:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jeff Bezos, founder of Amazon 그리고 삶]]></title>
+            <link>https://www.brightparagon.me/make-choices</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/make-choices</guid>
+            <pubDate>Tue, 02 Aug 2016 15:21:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[지난 3년의 기록: 대기업에서 스타트업으로]]></title>
+            <link>https://www.brightparagon.me/move-to-startup</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/move-to-startup</guid>
+            <pubDate>Thu, 27 Sep 2018 11:34:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[커뮤니티의 역할에 대한 단상]]></title>
+            <link>https://www.brightparagon.me/thoughts-on-role-of-community</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/thoughts-on-role-of-community</guid>
+            <pubDate>Sun, 31 Mar 2019 08:04:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[토스, 살면서 한번쯤]]></title>
+            <description><![CDATA[토스를 다니면서 맞이한 변화와 느끼고 깨달은 것을 풀어봅니다.]]></description>
+            <link>https://www.brightparagon.me/toss</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/toss</guid>
+            <pubDate>Fri, 08 Sep 2023 10:03:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[나만의 길을 걷는 것]]></title>
+            <link>https://www.brightparagon.me/walk-on-my-own-path</link>
+            <guid isPermaLink="true">https://www.brightparagon.me/walk-on-my-own-path</guid>
+            <pubDate>Sun, 11 Mar 2018 10:58:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

@@ -3,6 +3,7 @@ import matter from 'gray-matter'
 import path from 'path'
 import { isPublishReadyPost } from 'utils/post-file'
 import { PostPage } from './post-client'
+import { Post, PostData } from '@types'
 
 // TODO: ko 부분 변수화 i18n
 const getPost = async (postId: string) => {
@@ -45,7 +46,7 @@ export async function generateStaticParams() {
       }
     })
 
-  return await Promise.all(paths)
+  return Promise.all(paths)
 }
 
 type MetadataProps = {

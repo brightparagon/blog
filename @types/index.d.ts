@@ -1,9 +1,9 @@
-type Post = {
+export type Post = {
   content: string
   data: PostData
 }
 
-type PostData = {
+export type PostData = {
   key: string
   title: string
   description?: string

@@ -8,6 +8,17 @@ interface Props {
 }
 
 export default function Navigation({ maxContentWidth, mediumWidth }: Props) {
+  const handleRssClick = async () => {
+    const rssUrl = "https://www.brightparagon.me/rss.xml";
+
+    try {
+      await navigator.clipboard.writeText(rssUrl);
+      alert("RSS URL을 복사했어요.");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <Styled maxContentWidth={maxContentWidth} mediumWidth={mediumWidth}>
       <div className="Navigation__container">
@@ -23,6 +34,13 @@ export default function Navigation({ maxContentWidth, mediumWidth }: Props) {
             </Link>
           </li>
         </ul>
+        <ul>
+          <li>
+            <StyledButton onClick={handleRssClick}>
+              RSS <StyledImage src="/images/rss.png" alt="RSS" />
+            </StyledButton>
+          </li>
+        </ul>
       </div>
     </Styled>
   )
@@ -30,6 +48,22 @@ export default function Navigation({ maxContentWidth, mediumWidth }: Props) {
 
 const navigationHeight = 60
 const navigationMediumHeight = 40
+
+const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+`
+
+const StyledImage = styled.img`
+  width: 32px;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 4px;
+`
 
 const Styled = styled.nav<{
   maxContentWidth: number
@@ -47,7 +81,8 @@ const Styled = styled.nav<{
 
   .Navigation__container {
     display: flex;
-    width: ${({ maxContentWidth }) => maxContentWidth}px;
+    justify-content: space-between;
+    width: 100%;
     height: 100%;
 
     h4 {

@@ -1,7 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export default function Footer() {
-  return <Styled>푸터푸터</Styled>
+  return (
+    <Styled>
+      푸터푸터
+    </Styled>
+  )
 }
 
 const Styled = styled.div`

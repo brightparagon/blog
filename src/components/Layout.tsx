@@ -1,11 +1,10 @@
 'use client'
 
-import * as colors from 'constants/colors'
-
 import type { PropsWithChildren } from 'react'
 import styled from 'styled-components'
 import Footer from './Layout/Footer'
 import Navigation from './Layout/Navigation'
+import { cultured, eerieBlack } from 'constants/colors'
 
 export const maxContentWidth = 1024
 export const mediumWidth = 768
@@ -27,8 +26,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.cultured};
-  color: ${colors.eerieBlack};
+  background-color: ${cultured};
+  color: ${eerieBlack};
   padding: 0 32px;
 
   @media (max-width: ${maxContentWidth}px) {

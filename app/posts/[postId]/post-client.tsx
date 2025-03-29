@@ -43,7 +43,7 @@ export const PostPage = ({ post }: Props) => {
     <Layout>
       <PostHead>
         {data.thumbnail ? (
-          <img src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
+          <Thumbnail src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
         ) : null}
 
         <div className="PostHead__Info">
@@ -108,28 +108,28 @@ export const PostPage = ({ post }: Props) => {
 
 const contentsWidth = 680
 
+const Thumbnail = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 540px;
+
+  @media (max-width: ${mediumWidth}px) {
+    height: 300px;
+  }
+
+  @media (max-width: ${smallWidth}px) {
+    height: 220px;
+  }
+`
+
 const PostHead = styled.section`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: ${maxContentWidth}px;
+  width: 80%;
   background-color: transparent;
   outline: none;
-
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 500px;
-
-    @media (max-width: ${mediumWidth}px) {
-      height: 300px;
-    }
-
-    @media (max-width: ${smallWidth}px) {
-      height: 180px;
-    }
-  }
 
   .PostHead__Info {
     display: flex;

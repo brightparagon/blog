@@ -37,7 +37,7 @@ export default function Navigation({ maxContentWidth, mediumWidth }: Props) {
         <ul>
           <li>
             <StyledButton onClick={handleRssClick}>
-              RSS <StyledImage src="/images/rss.png" alt="RSS" />
+              <StyledImage src="/images/rss.png" alt="RSS" />
             </StyledButton>
           </li>
         </ul>

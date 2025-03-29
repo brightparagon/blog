@@ -29,6 +29,7 @@ export const PostPage = ({ post }: Props) => {
   const thumbnailAlt = getAltFromThumbnailUrl(data.thumbnail)
   const readingTime = getReadingTime(content)
 
+  // TODO: 훅으로 분리
   useEffect(() => {
     gtag('event', 'page_view', {
       page_title: data.title,
@@ -42,14 +43,14 @@ export const PostPage = ({ post }: Props) => {
   return (
     <Layout>
       <PostHead>
-        {data.thumbnail ? (
+        {data.thumbnail != null ? (
           <Thumbnail src={data.thumbnail} alt={thumbnailAlt} style={{ objectPosition: data.thumbnailPosition }} />
         ) : null}
 
         <div className="PostHead__Info">
           <CreatedAt createdAt={data.createdAt} />
 
-          {data.categories ? (
+          {data.categories != null ? (
             <Badges>
               {data.categories.slice(0, 5).map((category) => (
                 <Tag key={category} content={category} />
@@ -77,7 +78,7 @@ export const PostPage = ({ post }: Props) => {
       ) : null}
 
       <PostTail>
-        {data.categories ? (
+        {data.categories != null ? (
           <Badges>
             {data.categories.slice(0, 5).map((category) => (
               <Tag key={category} content={category} />
@@ -85,7 +86,7 @@ export const PostPage = ({ post }: Props) => {
           </Badges>
         ) : null}
 
-        {data.tags ? (
+        {data.tags != null ? (
           <Badges $marginTop={8}>
             {data.tags.slice(0, 5).map((tag) => (
               <Tag key={tag} content={tag} />
@@ -93,7 +94,7 @@ export const PostPage = ({ post }: Props) => {
           </Badges>
         ) : null}
 
-        {data.place ? (
+        {data.place != null ? (
           <>
             <p>
               <ColoredSpan color={blackCoral}>Written at</ColoredSpan> {data.place}
@@ -130,6 +131,10 @@ const PostHead = styled.section`
   width: 80%;
   background-color: transparent;
   outline: none;
+
+  @media (max-width: ${mediumWidth}px) {
+    width: 100%;
+  }
 
   .PostHead__Info {
     display: flex;

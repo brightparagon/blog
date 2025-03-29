@@ -3,18 +3,18 @@
 import dynamic from 'next/dynamic'
 import { useEffect } from 'react'
 
-import Layout, { maxContentWidth, mediumWidth, smallWidth } from 'components/Layout'
+import Layout, { mediumWidth, smallWidth } from 'components/Layout'
 
 import { blackCoral, eerieBlack, mainThemeColor } from 'constants/colors'
 import { GA_MEASUREMENT_ID } from 'constants/env'
 import { getAltFromThumbnailUrl, getReadingTime } from 'utils/misc'
 
+import { Post } from '@types'
 import Contents from 'components/Contents'
 import CreatedAt from 'components/CreatedAt'
 import ReadingTime from 'components/ReadingTime'
 import Tag from 'components/Tag'
 import styled from 'styled-components'
-import { Post } from '@types'
 
 const DynamicGoogleMap = dynamic(() => import('components/GoogleMap'), {
   loading: () => <p>Loading...</p>,

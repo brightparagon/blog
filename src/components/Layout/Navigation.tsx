@@ -9,15 +9,15 @@ interface Props {
 
 export default function Navigation({ maxContentWidth, mediumWidth }: Props) {
   const handleRssClick = async () => {
-    const rssUrl = "https://www.brightparagon.me/rss.xml";
+    const rssUrl = "https://www.brightparagon.me/rss.xml"
 
     try {
-      await navigator.clipboard.writeText(rssUrl);
-      alert("RSS URL을 복사했어요.");
+      await navigator.clipboard.writeText(rssUrl)
+      alert("RSS URL을 복사했어요.")
     } catch (error) {
-      console.error(error);
+      console.error(error)
     }
-  };
+  }
 
   return (
     <Styled maxContentWidth={maxContentWidth} mediumWidth={mediumWidth}>

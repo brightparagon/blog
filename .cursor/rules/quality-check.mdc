@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+    # Quality Assurance & Refinement Rule
+
+    작성된 블로그 글이 루트 경로의 `example.md` 파일에 나타난 품질 기준을 충족하고, 이전에 설정된 모든 작성 규칙을 준수하는지 확인하고 개선합니다.
+
+    - **비교:** 현재 글을 `example.md`의 구조, 스타일, 포함된 요소 등과 비교 검토합니다.
+    - **규칙 준수 확인:** 글이 다음 규칙들을 올바르게 적용했는지 확인합니다:
+        - `Blog Post Structure` (제목, 소개, 본문 섹션, 결론)
+        - `Image Placeholder Insertion` (`<이미지>` 플레이스홀더)
+        - `Reliable References` (하단 외부 자료 링크)
+        - `SEO Optimization` (이모지, 내부 링크)
+        - `Heading Levels` (제목 h1, 섹션 h3)
+        - `Tone of Voice Alignment` (`./posts/*.md` 기반 사용자 말투)
+    - **개선:** 규칙이 제대로 적용되지 않았거나 `example.md`의 품질 기준에 미치지 못하는 부분이 있다면, 구체적인 문제를 파악하고 관련된 규칙을 다시 적용하여 글을 개선합니다.
+    - **목표:** 최종 결과물이 사용자의 스타일 및 정의된 모든 가이드라인과 일치하는 고품질 블로그 게시물이 되도록 합니다.
+    

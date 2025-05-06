@@ -7,7 +7,7 @@ export function isPublishReadyPost(filename: string) {
   return !filename.startsWith('pending')
 }
 
-export const getPostsFromDirectory = async () => {
+export async function getPostsFromDirectory() {
   const postsDirectory = path.join(process.cwd(), 'posts')
   const fileNames = await fs.readdir(postsDirectory)
   const posts = fileNames

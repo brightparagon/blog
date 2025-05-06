@@ -33,6 +33,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           />
           `
         </noscript>
+
+        <meta name="google-adsense-account" content="ca-pub-7560418195581537" />
+
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
         <script
           dangerouslySetInnerHTML={{
